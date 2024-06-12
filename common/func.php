@@ -10,4 +10,3 @@ function bd_connect()
         exit();
     }
 }
-?>
