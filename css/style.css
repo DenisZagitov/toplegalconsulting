@@ -1,20 +1,23 @@
-﻿* {
+﻿/* Устанавливаем общие сбросы для всех элементов */
+* {
 	margin: 0;
 	padding: 0;
 }
 
+/* Стили для body и html */
 body,
 html {
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 	background-attachment: fixed;
-	font-family: Helvetica, Arial;
+	font-family: Helvetica, Arial, sans-serif;
 	background: #c7b39b url(../fon2.jpg);
 	/* Цвет фона и путь к файлу */
 	color: #483D8B;
 	/* Цвет текста */
 }
 
+/* Стили для заголовка и подвала */
 .header,
 .footer {
 	text-align: center;
@@ -22,23 +25,27 @@ html {
 	padding: 20px 0;
 }
 
+/* Основной контент, используя flexbox для размещения */
 .main-content {
 	display: flex;
 	justify-content: space-between;
 	padding: 20px;
 }
 
+/* Левый сайдбар */
 .left-sidebar {
 	width: 30%;
 	padding: 20px;
 	background-color: #f0f8ff;
 }
 
+/* Правый контент */
 .right-content {
 	width: 65%;
 	padding: 20px;
 }
 
+/* Стили для списка категорий */
 .categories ul {
 	list-style-type: none;
 	padding-left: 0;
@@ -48,6 +55,7 @@ html {
 	margin: 5px 0;
 }
 
+/* Стили для формы авторизации */
 .auth form {
 	margin-top: 20px;
 }
@@ -76,6 +84,7 @@ html {
 	background-color: #483D8B;
 }
 
+/* Стили для таблиц */
 .table {
 	width: 100%;
 	border-collapse: collapse;
@@ -96,6 +105,7 @@ html {
 	background-color: #ffffff;
 }
 
+/* Стили для навигации */
 .navigation {
 	list-style: none;
 	/* Отключение отображения маркеров. */
@@ -134,17 +144,20 @@ html {
 	/* Цвет текста при наведении курсора. */
 }
 
+/* Стили для частей страницы */
 .part2 {
 	background-color: #101f3c;
 	text-transform: uppercase;
 }
 
+/* Текст подвала */
 .footer-text {
 	color: rgb(128, 26, 0);
 	font-size: 40px;
 	font-weight: bold;
 }
 
+/* Стили для кнопок */
 .btn-new {
 	border: none;
 	border-radius: 10px;
@@ -175,6 +188,7 @@ html {
 	box-shadow: 0 20px 40px 0 rgba(11, 99, 246, 1);
 }
 
+/* Стили для таблиц с изображениями */
 .table-container {
 	text-align: center;
 }

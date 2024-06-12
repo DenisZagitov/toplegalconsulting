@@ -64,7 +64,7 @@
 					</div>
 				</nav>
 				<span>
-					<div style="color: Navy;	font-size: 40px;font-weight: bold;">
+					<div style="color: Navy; font-size: 40px;font-weight: bold;">
 						Юридическая компания <br>«TopLegalConsulting»</div>
 				</span>
 			</td>
@@ -88,11 +88,11 @@
 							$q_types = $db->query($sql);
 							while ($row_types = mysqli_fetch_array($q_types, MYSQLI_NUM)) {
 								echo '
-              <tr>
-                <td align="left" ><p style="margin-left: 20px"><span class="style5">
-				<a href="/?vid=catalog&type=' . $row_types[0] . '">' . $row_types[1] . '</a>
-				</span></p></td>
-              </tr>';
+									<tr>
+										<td align="left" ><p style="margin-left: 20px"><span class="style5">
+										<a href="/?vid=catalog&type=' . $row_types[0] . '">' . $row_types[1] . '</a>
+										</span></p></td>
+									</tr>';
 							}
 							?>
 						</table>
@@ -104,16 +104,15 @@
 				<strong class="style8">
 					<?php
 
-					if (isset($_SESSION['name_client'])) echo "Здравствуйте, " . $_SESSION['name_client'] . "! <br> <a href='/reg.php?exit=1'>
-	  Выход</a>";
+					if (isset($_SESSION['name_client'])) echo "Здравствуйте, " . $_SESSION['name_client'] . "! <br> <a href='/reg.php?exit=1'> Выход</a>";
 					else
 						echo '
-		  <form method="get" action="/reg.php">
+			<form method="get" action="/reg.php">
             Гость. Авторизация:
-		    <br>e-mail:  <input name="mail" type="text" size="30" maxlength="50" />
+			<br>e-mail:  <input name="mail" type="text" size="30" maxlength="50" />
 			<br>пароль:  <input name="pas" type="password" size="20" maxlength="20" /><input class="btn-new" name="enter" type="submit" value="Войти" />
 			<br><a href="/reg.php"><button class="btn-new">Регистрация</button></a>
-		    </form></strong>';
+			</form></strong>';
 					?>
 			</td>
 		</tr>

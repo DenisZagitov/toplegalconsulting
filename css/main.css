@@ -1,8 +1,8 @@
-/* font-family: "PFDinCondensedRegular"; */
+/* Подключение шрифтов */
 @font-face {
 	font-family: "PFDinTextCondPro";
 	src: url("../fonts/PFDinCondensedRegular/PFDinCondensedRegular.eot");
-	src: url("../fonts/PFDinCondensedRegular/PFDinCondensedRegular.eot?#iefix")format("embedded-opentype"),
+	src: url("../fonts/PFDinCondensedRegular/PFDinCondensedRegular.eot?#iefix") format("embedded-opentype"),
 		url("../fonts/PFDinCondensedRegular/PFDinCondensedRegular.woff") format("woff"),
 		url("../fonts/PFDinCondensedRegular/PFDinCondensedRegular.ttf") format("truetype");
 	font-style: normal;
@@ -13,7 +13,7 @@
 @font-face {
 	font-family: "PFDinTextCondPro";
 	src: url("../fonts/PFDinCondensedMedium/PFDinCondensedMedium.eot");
-	src: url("../fonts/PFDinCondensedMedium/PFDinCondensedMedium.eot?#iefix")format("embedded-opentype"),
+	src: url("../fonts/PFDinCondensedMedium/PFDinCondensedMedium.eot?#iefix") format("embedded-opentype"),
 		url("../fonts/PFDinCondensedMedium/PFDinCondensedMedium.woff") format("woff"),
 		url("../fonts/PFDinCondensedMedium/PFDinCondensedMedium.ttf") format("truetype");
 	font-style: normal;
@@ -24,7 +24,7 @@
 @font-face {
 	font-family: "PTSerif";
 	src: url("../fonts/PTSerifItalic/PTSerifItalic.eot");
-	src: url("../fonts/PTSerifItalic/PTSerifItalic.eot?#iefix")format("embedded-opentype"),
+	src: url("../fonts/PTSerifItalic/PTSerifItalic.eot?#iefix") format("embedded-opentype"),
 		url("../fonts/PTSerifItalic/PTSerifItalic.woff") format("woff"),
 		url("../fonts/PTSerifItalic/PTSerifItalic.ttf") format("truetype");
 	font-style: italic;
@@ -55,7 +55,7 @@
 @font-face {
 	font-family: "BeerRegular";
 	src: url("../fonts/BeerRegular/BeerRegular.eot");
-	src: url("../fonts/BeerRegular/BeerRegular.eot?#iefix")format("embedded-opentype"),
+	src: url("../fonts/BeerRegular/BeerRegular.eot?#iefix") format("embedded-opentype"),
 		url("../fonts/BeerRegular/BeerRegular.woff") format("woff"),
 		url("../fonts/BeerRegular/BeerRegular.ttf") format("truetype");
 	font-style: normal;
@@ -65,7 +65,7 @@
 @font-face {
 	font-family: "KelsonSansRegular";
 	src: url("../fonts/KelsonSansRegular/KelsonSansRegular.eot");
-	src: url("../fonts/KelsonSansRegular/KelsonSansRegular.eot?#iefix")format("embedded-opentype"),
+	src: url("../fonts/KelsonSansRegular/KelsonSansRegular.eot?#iefix") format("embedded-opentype"),
 		url("../fonts/KelsonSansRegular/KelsonSansRegular.woff") format("woff"),
 		url("../fonts/KelsonSansRegular/KelsonSansRegular.ttf") format("truetype");
 	font-style: normal;
@@ -76,13 +76,14 @@
 @font-face {
 	font-family: "PFDinCondensedLightItalic";
 	src: url("../fonts/PFDinCondensedLightItalic/PFDinCondensedLightItalic.eot");
-	src: url("../fonts/PFDinCondensedLightItalic/PFDinCondensedLightItalic.eot?#iefix")format("embedded-opentype"),
+	src: url("../fonts/PFDinCondensedLightItalic/PFDinCondensedLightItalic.eot?#iefix") format("embedded-opentype"),
 		url("../fonts/PFDinCondensedLightItalic/PFDinCondensedLightItalic.woff") format("woff"),
 		url("../fonts/PFDinCondensedLightItalic/PFDinCondensedLightItalic.ttf") format("truetype");
 	font-style: normal;
 	font-weight: normal;
 }
 
+/* Сброс стилей для списков */
 ul,
 ol {
 	padding: 0;
@@ -93,6 +94,7 @@ li {
 	list-style-type: none;
 }
 
+/* Основные стили для заголовков и абзацев */
 h1,
 h2,
 h3,
@@ -107,7 +109,9 @@ p,
 	padding: 0;
 }
 
-html {
+/* Высота html и body */
+html,
+body {
 	height: 100%;
 }
 
@@ -115,16 +119,21 @@ body {
 	line-height: normal;
 	color: #000;
 	height: 100%;
+	font-family: 'Ubuntu', sans-serif;
 }
 
+/* Контейнер */
 .container {
 	width: 1200px;
+	margin: 0 auto;
 }
 
+/* Основной фон и текст */
 .body {
 	color: #fff;
 }
 
+/* Стили для заголовка */
 .header {
 	background-color: #fff;
 }
@@ -141,10 +150,7 @@ a.logo {
 	display: block;
 }
 
-a.logo:visited {
-	text-decoration: none;
-}
-
+a.logo:visited,
 a.logo:hover {
 	text-decoration: none;
 }
@@ -153,6 +159,7 @@ a.logo:hover {
 	height: 135px;
 }
 
+/* Стили для телефона */
 .phone {
 	display: block;
 	float: right;
@@ -164,7 +171,6 @@ a.logo:hover {
 
 .nphone {
 	font-family: 'Ubuntu';
-	font-style: Regular;
 	font-size: 24px;
 	font-weight: bold;
 	color: #FFD700;
@@ -173,7 +179,6 @@ a.logo:hover {
 
 p.time {
 	display: block;
-	background-repeat: no-repeat;
 	padding-left: 12px;
 	margin-left: 13px;
 	font-family: Arial;
@@ -183,6 +188,7 @@ p.time {
 	text-align: left;
 }
 
+/* Стили для ссылки "звонок" */
 a.zv {
 	color: #0084ff;
 	text-decoration: none;
@@ -192,20 +198,16 @@ a.zv {
 }
 
 a.zv:visited {
-	color: #0084ff;
-	text-decoration: none;
-	/* Убираем подчеркивание */
 	border-bottom: none;
 	/* Добавляем свою линию */
 }
 
 a.zv:hover {
-	color: #0084ff;
-	text-decoration: none;
 	border-bottom: none;
 	/* Убираем подчеркивание */
 }
 
+/* Стили для модального текста */
 p.modal_p {
 	font-family: PFDinTextCondPro;
 	color: #000000;
@@ -213,13 +215,14 @@ p.modal_p {
 	/* Приближение из-за подстановки шрифтов */
 	font-weight: 500;
 	text-align: left;
-	transform: scaleX(1.0004);
-	/* свойства ширины и высоты были исключены, поскольку было выполнено трансформирование */
 	text-transform: uppercase;
-
 }
 
-input#inp2 {
+/* Стили для инпутов */
+input#inp2,
+input#phone2,
+input#inp1,
+input#phone1 {
 	padding-left: 10px;
 	margin: 5px 0 15px;
 	border-width: 2px;
@@ -231,48 +234,23 @@ input#inp2 {
 	/*// удаляет обводку в браузерах хром(желтая) и сафари(синяя)*/
 	font-family: PFDinTextCondPro;
 	color: #000;
-	font-size: 23.99px;
-	/* Приближение из-за подстановки шрифтов */
+	font-size: 24px;
 	font-weight: 400;
 	text-align: left;
-	transform: scaleX(1.0004);
-	/* свойства ширины и высоты были исключены, поскольку было выполнено трансформирование */
 }
 
 input.placeholder {
 	color: #b2b2b2;
 }
 
-input#phone2 {
-	text-align: left;
-	padding-left: 10px;
-	margin: 5px 0 15px;
-	border-width: 2px;
-	border-color: #cacaca;
-	border-style: solid;
-	width: 100%;
-	height: 46px;
-	outline: none;
-	/*// удаляет обводку в браузерах хром(желтая) и сафари(синяя)*/
-	font-family: PFDinTextCondPro;
-	color: #000;
-	font-size: 23.99px;
-	/* Приближение из-за подстановки шрифтов */
-	font-weight: 400;
-	text-align: left;
-	transform: scaleX(1.0004);
-	/* свойства ширины и высоты были исключены, поскольку было выполнено трансформирование */
-}
-
-input.button4 {
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	margin: auto;
+/* Стили для кнопок */
+input.button4,
+a.button1,
+a.button2,
+input.button3 {
 	display: block;
-	text-align: center;
 	font-family: "KelsonSansRegular";
+	text-align: center;
 	color: #fff;
 	/* цвет текста */
 	text-decoration: none;
@@ -280,34 +258,36 @@ input.button4 {
 	border-radius: 25px;
 	background: #e42640;
 	/* фон кнопки */
-	border-color: #e42640;
-	border-style: solid;
 	padding: .7em 2em;
 	/* отступ от текста */
 	outline: none;
 	/* убирать контур в Mozilla */
 }
 
-input.button4:hover {
+input.button4:hover,
+a.button1:hover,
+a.button2:hover,
+input.button3:hover {
 	background: transparent;
 	border-width: 2px;
 	border-color: #e42640;
-	border-style: solid;
 	color: #e42640;
 }
 
-input.button4:active {
+input.button4:active,
+a.button1:active,
+a.button2:active,
+input.button3:active {
 	background: transparent;
 	border-width: 2px;
 	border-color: #e42640;
-	border-style: solid;
 	color: #e42640;
 }
 
+/* Стили для навигации */
 .part2 {
 	background-color: #101f3c;
 	text-transform: uppercase;
-
 }
 
 .navigation {
@@ -317,7 +297,6 @@ input.button4:active {
 }
 
 .navigation li {
-
 	float: left;
 	/* Выстраивание элементов списка в один ряд. */
 	text-align: center;
@@ -325,7 +304,6 @@ input.button4:active {
 }
 
 .navigation li a {
-
 	font-family: PFDinTextCondPro;
 	color: rgba(255, 255, 255, 0.9);
 	font-size: 18px;
@@ -350,9 +328,18 @@ input.button4:active {
 	/* Цвет текста при наведении курсора. */
 }
 
-.part3 {
-	background-position: left;
-	height: 460px;
+/* Стили для разделов */
+.part3,
+.part4,
+.part5,
+.part6,
+.part7,
+.part8,
+.part9,
+.part10,
+.part11,
+.part12 {
+	padding: 20px;
 }
 
 .part1 {
@@ -363,70 +350,44 @@ input.button4:active {
 	height: 200px;
 }
 
-.sliders {
-	position: absolute;
+.part3 {
+	background-position: left;
+	height: 460px;
 }
 
-p.tovar {
-	margin-top: 110px;
-	font-family: "KelsonSansRegular";
-	color: #fff;
-	text-transform: uppercase;
-	font-size: 42px;
-	font-weight: 500;
-	text-align: left;
-	text-shadow: black 2px 3px 15px;
-	margin-bottom: 40px;
-}
-
-a.button1 {
-	font-family: "KelsonSansRegular";
-	margin-left: 30%;
+.part5 {
+	background-color: #f5f5f5;
 	text-align: center;
-	color: #fff;
-	/* цвет текста */
-	text-decoration: none;
-	/* убирать подчёркивание у ссылок */
-	border-radius: 25px;
-	background: #e42640;
-	/* фон кнопки */
-	padding: .7em 2em;
-	/* отступ от текста */
-	outline: none;
-	/* убирать контур в Mozilla */
 }
 
-a.button1:hover {
-	background: transparent;
-	border-width: 2px;
-	border-color: #e42640;
-	border-style: solid;
-	text-shadow: black 0 2px 3px;
+.part7,
+.part12 {
+	background-color: #101f3c;
+	padding: 40px;
 }
 
-a.button1:active {
-	background: transparent;
-	border-width: 2px;
-	border-color: #e42640;
-	border-style: solid;
-	text-shadow: black 0 2px 3px;
+.part7 p,
+.part12 p {
+	font-family: PTSerif;
+	color: rgba(255, 255, 255, 0.9);
+	font-size: 36px;
+	font-style: italic;
+	line-height: 50px;
+	text-align: center;
 }
 
-/* при нажатии */
-.part4 {
-	clear: both;
-}
-
+/* Стили для заголовков */
 p.all_zag {
-	font-family: "KelsonSansRegular";
+	font-family: “KelsonSansRegular”;
 	font-size: 36px;
 	font-weight: 700;
-	margin-top: 30px;
-	margin-bottom: 30px;
-
+	text-align: center;
+	margin: 30px 0;
 }
 
-p.pnews {
+/* Стили для новостей */
+p.pnews,
+p.pnews1 {
 	font-family: Arial;
 	color: #000000;
 	font-size: 16px;
@@ -436,55 +397,21 @@ p.pnews {
 	margin-bottom: 15px;
 }
 
-p.pnews1 {
-	font-family: Arial;
-	color: #000000;
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 26px;
-	text-align: left;
-	margin-bottom: 40px;
-}
-
-.part4 img {
+.part4 img,
+.part8 img {
 	float: left;
-	width: 100px;
 	height: auto;
 	margin-right: 20px;
-	margin-bottom: 30px;
 }
 
-p.data {
-	font-family: Arial;
-	font-size: 12px;
-	color: #555;
-}
-
-a.newstext {
-	font-family: "KelsonSansRegular";
-	font-size: 18px;
-	text-decoration: none;
-	color: #000;
-}
-
-a.newstext:hover {
-	text-decoration: underline;
-}
-
-.part5 {
-	background-color: #f5f5f5;
-	padding-bottom: 80px;
-	text-align: center;
-}
-
-.plus img {
+.part5 .plus img {
 	display: block;
-	margin: 0 auto 0;
+	margin: 0 auto;
 }
 
-
-.plus p {
-	margin-top: 30px;
+.part5 .plus p,
+.part6 span,
+.part8 span {
 	font-family: Arial;
 	color: #555555;
 	font-size: 16px;
@@ -494,71 +421,22 @@ a.newstext:hover {
 	text-align: center;
 }
 
-.part6 .all_zag {
-	text-align: center;
-
+.part5 .plus p {
+	margin-top: 30px;
 }
 
-.part6 img {
-	margin-top: 90px;
-	margin-bottom: 15px;
-}
-
-.slider p {
-	font-family: "KelsonSansRegular";
+.part6 .slider p {
+	font-family: “KelsonSansRegular”;
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
 	font-weight: 400;
 	font-size: 16px;
-	margin-top: 20px;
-	margin-bottom: 5px;
+	margin: 20px 0 5px;
 }
 
-.part6 span {
-	display: block;
-	font-size: 14px;
-	color: #555;
-	margin-bottom: 40px;
-}
-
-.part7 {
-	background-color: #101f3c;
-	padding-top: 40px;
-	padding-bottom: 40px;
-
-}
-
-.part7 p {
-	font-family: PTSerif;
-	color: rgba(255, 255, 255, 0.9);
-	font-size: 36px;
-	/* Приближение из-за подстановки шрифтов */
-	font-style: italic;
-	line-height: 50px;
-	/* Приближение из-за подстановки шрифтов */
-	text-align: center;
-}
-
-.part7 hr {
-	width: 150px;
-}
-
-.part8 .all_zag {
-	text-align: center;
-
-}
-
-.part8 img {
-	float: left;
-	clear: both;
-	height: auto;
-	margin-right: 20px;
-}
-
-.otztext p {
-	font-family: "PFDinCondensedLightItalic";
+.part8 .otztext p {
+	font-family: “PFDinCondensedLightItalic”;
 	color: #000000;
-	line-height: 4px;
 	font-size: 20px;
 	/* Приближение из-за подстановки шрифтов */
 	font-style: italic;
@@ -567,200 +445,44 @@ a.newstext:hover {
 	text-align: left;
 }
 
-p.otpname {
-	font-family: "KelsonSansRegular";
-	text-transform: uppercase;
-	letter-spacing: 0.5px;
-	font-weight: 400;
-	font-size: 16px;
-	margin-top: 20px;
-	margin-bottom: 5px;
-}
-
-.part8 span {
-	font-size: 14px;
-	color: #555;
-
+.part8 .otztext {
+	margin: 19px 0 30px;
+	padding: 25px 39px;
+	background-color: #f5f5f5;
+	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
 }
 
 .otzinfo {
 	margin-top: 40px;
 }
 
-.otztext {
-	margin: 19px 0px 30px;
-	padding: 25px 39px 32px;
-	background-color: #f5f5f5;
-	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
-}
-
-.readmore {
-	display: block;
-	text-align: center;
-	margin-bottom: 50px;
-}
-
-a.button2 {
-	font-family: "KelsonSansRegular";
-	background: transparent;
-	text-align: center;
-	border-width: 2px;
-	border-color: #e42640;
-	border-style: solid;
-	color: #e42640;
-	/* цвет текста */
-	text-decoration: none;
-	/* убирать подчёркивание у ссылок */
-	border-radius: 25px;
-	padding: .7em 4em;
-	/* отступ от текста */
-	outline: none;
-	/* убирать контур в Mozilla */
-}
-
-a.button2:hover {
-	background: #e42640;
-	border-width: 2px;
-	border-color: #e42640;
-	color: #fff;
-}
-
-.part9 {
-	padding-bottom: 40px;
-}
-
-.part9 .all_zag {
-	text-align: center;
-}
-
-.part9 img {
-	margin-top: 30px;
-	text-align: center;
-
-}
-
-.part10 {
-	background-color: #fff;
-}
-
-.part10 .all_zag {
-	text-align: center;
-}
-
-.part10 span {
-	display: block;
-	font-size: 16px;
+.otpname,
+p.data,
+p.rs {
+	font-family: Arial;
+	font-size: 12px;
 	color: #555;
-	margin-bottom: 40px;
-	text-align: center;
 }
 
-.part10 .inp_form p {
-	font-family: PFDinTextCondPro;
-	color: #000000;
-	font-size: 16px;
-	/* Приближение из-за подстановки шрифтов */
-	font-weight: 500;
-	text-align: left;
-	transform: scaleX(1.0004);
-	/* свойства ширины и высоты были исключены, поскольку было выполнено трансформирование */
-	text-transform: uppercase;
-}
-
-input.button3 {
-	display: block;
-	font-family: "KelsonSansRegular";
-	color: #fff;
-	/* цвет текста */
+a.newstext {
+	font-family: “KelsonSansRegular”;
+	font-size: 18px;
 	text-decoration: none;
-	/* убирать подчёркивание у ссылок */
-	border-radius: 25px;
-	background: #e42640;
-	/* фон кнопки */
-	border-color: #e42640;
-	border-style: solid;
-	padding: .7em 2em;
-	/* отступ от текста */
-	outline: none;
-	/* убирать контур в Mozilla */
-}
-
-input.button3:hover {
-	background: transparent;
-	border-width: 2px;
-	border-color: #e42640;
-	border-style: solid;
-	color: #e42640;
-}
-
-input.button3:active {
-	background: transparent;
-	border-width: 2px;
-	border-color: #e42640;
-	border-style: solid;
-	color: #e42640;
-}
-
-input#inp1 {
-	padding-left: 10px;
-	margin: 5px 0 15px;
-	border-width: 2px;
-	border-color: #cacaca;
-	border-style: solid;
-	width: 366px;
-	height: 46px;
-	outline: none;
-	/*// удаляет обводку в браузерах хром(желтая) и сафари(синяя)*/
-	font-family: PFDinTextCondPro;
 	color: #000;
-	font-size: 23.99px;
-	/* Приближение из-за подстановки шрифтов */
-	font-weight: 400;
-	text-align: left;
-	transform: scaleX(1.0004);
-	/* свойства ширины и высоты были исключены, поскольку было выполнено трансформирование */
 }
 
-input.placeholder {
-	color: #b2b2b2;
+a.newstext:hover {
+	text-decoration: underline;
 }
 
-input#phone1 {
-	text-align: left;
-	padding-left: 10px;
-	margin: 5px 0 15px;
-	border-width: 2px;
-	border-color: #cacaca;
-	border-style: solid;
-	width: 366px;
-	height: 46px;
-	outline: none;
-	/*// удаляет обводку в браузерах хром(желтая) и сафари(синяя)*/
-	font-family: PFDinTextCondPro;
-	color: #000;
-	font-size: 23.99px;
-	/* Приближение из-за подстановки шрифтов */
-	font-weight: 400;
-	text-align: left;
-	transform: scaleX(1.0004);
-	/* свойства ширины и высоты были исключены, поскольку было выполнено трансформирование */
-}
-
-
-.part11 {
-	height: 600px;
-
-
-}
-
-.map {
+/* Стили для карты */
+.part11 .map {
 	width: 100%;
 	position: absolute;
-	opacity: .99;
-
+	opacity: 0.99;
 }
 
-.addressmap {
+.part11 .addressmap {
 	z-index: 30000;
 	margin-top: 100px;
 	background-color: rgba(255, 255, 255, 0.7);
@@ -769,65 +491,25 @@ input#phone1 {
 	padding: 35px;
 }
 
-.addressmap p {
-	font-family: "KelsonSansRegular";
+.part11 .addressmap p,
+.part11 .addressmap span,
+.part11 .addressmap a {
+	font-family: “KelsonSansRegular”;
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
 	font-weight: 400;
 	font-size: 16px;
-	margin-bottom: 5px;
-}
-
-.addressmap span {
-	display: block;
-	font-size: 14px;
 	color: #555;
 	padding-bottom: 30px;
 }
 
-.addressmap a {
-	display: block;
-	font-size: 14px;
-	color: #555;
-	padding-bottom: 30px;
-}
-
-.part12 {
-	background-color: #101f3c;
-	height: 45px;
-}
-
-.part12 p {
-	display: block;
-	font-family: Arial;
-	color: #fff !important;
-	text-align: left;
-	font-size: 14px;
-	font-weight: 400;
-	line-height: 18px;
-	padding: 15px 0px;
-}
-
-p.rs {
-	text-align: right;
-}
-
-.part12 a {
-	color: #fff;
-
-}
-
+/* Стили для кнопки обратного звонка */
 .call_back {
-	-webkit-transform: rotate(-90deg);
-	/*Поворот блока с текстом кнопки  на 90 градусов*/
-	-moz-transform: rotate(-90deg);
-	-ms-transform: rotate(-90deg);
-	-o-transform: rotate(-90deg);
 	transform: rotate(-90deg);
 	position: fixed;
 	/*фиксированная позиция кнопки при прокрутке*/
 	z-index: 999;
-	right: 0px;
+	right: 0;
 	/*отступ справа*/
 	top: 35%;
 	/*отступ сверху*/
@@ -838,26 +520,19 @@ p.rs {
 /*Стили для ссылки*/
 .call_back a {
 	color: #fff;
-	/* цвет текста */
-	display: block;
 	background: #e42640;
-	/* фон кнопки */
-	font-family: "KelsonSansRegular";
+	font-family: “KelsonSansRegular”;
 	font-size: 1.2em;
 	/*размер шрифта*/
 	text-align: center;
 	/*выравнивание по центру*/
 	padding: 10px 20px;
 	/*внутренние отступы*/
-
 	border-radius: 25px;
 	/*радиус скругления углов*/
 	border: 1px solid #fff;
 	/*рамка вокруг кнопки*/
 	text-decoration: none;
-	/* убирать подчёркивание у ссылок */
-	padding: .7em 2em;
-	/* отступ от текста */
 	outline: none;
 	/* убирать контур в Mozilla */
 }

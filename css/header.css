@@ -1,14 +1,16 @@
-/* Стили для заголовка и навигации */
+/* Стили для заголовка */
 .header {
     background-color: #F0F8FF;
     text-align: center;
     padding: 20px;
 }
 
+/* Логотип */
 .header .logo img {
     height: 135px;
 }
 
+/* Стили для телефона */
 .header .phone p {
     font-size: 24px;
     font-weight: bold;
@@ -21,12 +23,14 @@
     height: 50px;
 }
 
+/* Контейнер для заголовка */
 .header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+/* Навигация */
 .navigation {
     list-style: none;
     padding: 0;
@@ -55,6 +59,7 @@
     color: #fff;
 }
 
+/* Название компании */
 .company-name {
     color: Navy;
     font-size: 40px;
@@ -62,6 +67,7 @@
     margin: 20px 0;
 }
 
+/* Таблица категорий */
 .category-table {
     width: 100%;
     margin: 20px 0;
@@ -71,6 +77,7 @@
     padding: 10px;
 }
 
+/* Форма авторизации */
 .auth-form {
     margin: 20px 0;
 }
@@ -84,6 +91,7 @@
     font-size: 24px;
 }
 
+/* Кнопка авторизации */
 .auth-form .btn-new {
     border: none;
     border-radius: 10px;
