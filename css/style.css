@@ -3,25 +3,97 @@
 	padding: 0;
 }
 
-
 body,
 html {
 	margin: 0px;
 	padding: 0px;
 	background-attachment: fixed;
 	font-family: Helvetica, Arial;
-
 	background: #c7b39b url(../fon2.jpg);
 	/* Цвет фона и путь к файлу */
 	color: #483D8B;
 	/* Цвет текста */
-
 }
 
-.part2 {
-	background-color: #101f3c;
-	text-transform: uppercase;
+.header,
+.footer {
+	text-align: center;
+	background-color: #ffffff;
+	padding: 20px 0;
+}
 
+.main-content {
+	display: flex;
+	justify-content: space-between;
+	padding: 20px;
+}
+
+.left-sidebar {
+	width: 30%;
+	padding: 20px;
+	background-color: #f0f8ff;
+}
+
+.right-content {
+	width: 65%;
+	padding: 20px;
+}
+
+.categories ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+.categories ul li {
+	margin: 5px 0;
+}
+
+.auth form {
+	margin-top: 20px;
+}
+
+.auth input[type="text"],
+.auth input[type="password"] {
+	width: calc(100% - 20px);
+	padding: 10px;
+	margin: 5px 0;
+	border: 1px solid #ccc;
+}
+
+.auth input[type="submit"],
+.auth button {
+	width: 100%;
+	padding: 10px;
+	margin: 5px 0;
+	background-color: #7B68EE;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+
+.auth input[type="submit"]:hover,
+.auth button:hover {
+	background-color: #483D8B;
+}
+
+.table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.table th,
+.table td {
+	border: 1px solid #ccc;
+	padding: 10px;
+	text-align: left;
+}
+
+.table th {
+	background-color: #f0f8ff;
+}
+
+.table td {
+	background-color: #ffffff;
 }
 
 .navigation {
@@ -31,7 +103,6 @@ html {
 }
 
 .navigation li {
-
 	float: left;
 	/* Выстраивание элементов списка в один ряд. */
 	text-align: center;
@@ -39,7 +110,6 @@ html {
 }
 
 .navigation li a {
-
 	font-family: PFDinTextCondPro;
 	color: rgba(255, 255, 255, 0.9);
 	font-size: 18px;
@@ -47,14 +117,14 @@ html {
 	font-weight: 500;
 	text-align: center;
 	display: block;
-	/* Изменение отображения на блочное  */
+	/* Изменение отображения на блочное */
 	padding: 10px 15px;
 	/* Внутри блочные отступы. */
 	letter-spacing: 1px;
 	text-decoration: none;
 	/* Устранение подчёркивания ссылок. */
 	position: relative;
-	/* Это необходимо при использовании Internet Explorer 6  */
+	/* Это необходимо при использовании Internet Explorer 6 */
 }
 
 .navigation li a:hover {
@@ -64,155 +134,15 @@ html {
 	/* Цвет текста при наведении курсора. */
 }
 
-.container {
-	width: 1050px;
+.part2 {
+	background-color: #101f3c;
+	text-transform: uppercase;
 }
 
-.body {
-	font-size: 16px;
-	text-align: center;
-	color: 2F4F4F;
-}
-
-#maket {
-	z-index: 0;
-	width: 830px;
-	margin: 0 auto;
-}
-
-.a,
-.b {
-	font-size: 24px;
-	width: 150px
-}
-
-.b {
-	position: relative;
-	left: -3px;
-	top: -40;
-	color: 2F4F4F;
-	z-index: +1;
-}
-
-.a1,
-.b1 {
-	font-size: 24px;
-	width: 100px text-align:center
-}
-
-.b1 {
-	position: relative;
-	left: -2px;
-	top: -41;
-	color: 2F4F4F;
-	z-index: +1;
-}
-
-.a,
-.a1 {
-	color: 2F4F4F
-}
-
-#dynamic {
-	z-index: 101;
-}
-
-
-A:link {
-	font-weight: bold;
-	color: #2F4F4F;
-}
-
-A:visited {
-	font-weight: bold;
-	color: #2F4F4F;
-}
-
-A:active {
-	font-weight: bold;
-	color: #2F4F4F;
-}
-
-A:hover {
-	font-weight: bold;
-	color: #2F4F4F;
-}
-
-.style1 {
-	color: #8B0A50;
-	font-weight: bold;
-	font-family: Helvetica, Arial;
+.footer-text {
+	color: rgb(128, 26, 0);
 	font-size: 40px;
-}
-
-.style2 {
-	font-size: 32px;
-	text-align: center;
-	text-indent: 30px color: #483D8B
-}
-
-.style3 {
-	font-size: 16px;
-	color: #FFFFFF;
-}
-
-.style4 {
-	font-size: 20px;
-	margin-left: 0px;
-}
-
-.style5 {
-	font-size: 32px;
-	color: #5F9EA0;
-	text-indent: 40px
-}
-
-.style6 {
-	color: #FFFFFF;
-	font-size: 12px;
 	font-weight: bold;
-}
-
-.style7 {
-	top: 50px;
-	font-size: 80px;
-	text-align: center;
-	font-family: Helvetica, Arial;
-	color: #800000;
-}
-
-.style8 {
-	top: 50px;
-	font-size: 28pt;
-	text-align: center;
-	font-family: Helvetica, Arial;
-	color: #483D8B;
-}
-
-.styletable {
-	font-size: 22px;
-	color: 2F4F4F;
-	margin-left: 20px;
-	background-color: #800000;
-}
-
-.style2u {
-	font-size: 16px;
-	color: #000000;
-}
-
-.style3u {
-	font-size: 28px;
-	color: #2E8B57;
-}
-
-.style1,
-.style2,
-.style3,
-.style7,
-.style8,
-.style3u {
-	font-weight: bold
 }
 
 .btn-new {
@@ -243,4 +173,17 @@ A:hover {
 .btn-new1:hover {
 	transform: translate(0, -3px);
 	box-shadow: 0 20px 40px 0 rgba(11, 99, 246, 1);
+}
+
+.table-container {
+	text-align: center;
+}
+
+.image-table {
+	margin: 0 auto;
+	border: 3px solid #000;
+}
+
+.image-table td {
+	padding: 10px;
 }

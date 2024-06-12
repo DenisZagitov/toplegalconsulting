@@ -1,16 +1,20 @@
 <?php
+// Страница регистрации клиента
 session_start();
 include("common/func.php");
 bd_connect();
-error_reporting(0);
+ini_set('display_errors', 1);
+error_reporting(E_ALL ^ E_NOTICE);
+error_reporting(E_ALL);
 ?>
 <html>
 
 <head>
   <meta charset="utf-8">
   <title>Юридическая компания «TopLegalConsulting»</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link href="img/icon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="css/header.css" rel="stylesheet" type="text/css">
+  <link href="img/icon.ico" rel="shortcut icon" type="image/x-icon"/>
 </head>
 
 <body style="body">
