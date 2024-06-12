@@ -13,7 +13,7 @@ bd_connect();
   <link href="img/icon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 
-<body style="body">
+<body class="body">
   <?php
   include("common/top.php");
   $sql = "SELECT * FROM otchet";

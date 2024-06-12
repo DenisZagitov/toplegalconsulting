@@ -15,7 +15,7 @@ error_reporting(E_ALL);
   <link href="img/icon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 
-<body style="body">
+<body class="body">
   <?php
   include("common/top.php");
   if (isset($_GET['vid'])) {

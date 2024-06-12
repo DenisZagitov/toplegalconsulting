@@ -12,7 +12,7 @@ bd_connect();
   <link href="img/icon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 
-<body style="body">
+<body class="body">
   <?
   include("common/top.php");
   ?>

@@ -13,7 +13,7 @@ include("common/top.php");
   <link href="img/icon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 
-<body style="body">
+<body class="body">
   <center>
     <table>
       <tr>
