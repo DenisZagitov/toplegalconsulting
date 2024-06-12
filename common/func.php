@@ -1,14 +1,13 @@
 ﻿<?php
 function bd_connect()
-  {
-   global $db;
-$db = new mysqli("localhost", "root", "", "toplegalconsulting" );
-/* проверяем соединение */
-if (mysqli_connect_errno()) {
-    printf("Connect failed: %s\n", mysqli_connect_error());
-    exit();
-}
+{
+    global $db;
+    $db = new mysqli("db", "user", "password", "toplegalconsulting");
 
-
+    // проверяем соединение
+    if ($db->connect_errno) {
+        printf("Connect failed: %s\n", $db->connect_error);
+        exit();
+    }
 }
 ?>
