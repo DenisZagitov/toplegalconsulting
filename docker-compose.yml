@@ -1,17 +1,9 @@
-version: '3.1'
+version: '3.8'
 
 services:
-  web:
-    build: .
-    ports:
-      - "80:80"
-    volumes:
-      - .:/var/www/html
-    depends_on:
-      - db
-
   db:
     image: mysql:8.0
+    container_name: toplegalconsulting-db
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -21,6 +13,38 @@ services:
     volumes:
       - db_data:/var/lib/mysql
       - ./db:/docker-entrypoint-initdb.d
+    networks:
+      - toplegalconsulting-network
+
+  web:
+    build: .
+    container_name: toplegalconsulting-web
+    restart: always
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+    networks:
+      - toplegalconsulting-network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: toplegalconsulting-phpmyadmin
+    restart: always
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: root
+    depends_on:
+      - db
+    networks:
+      - toplegalconsulting-network
 
 volumes:
   db_data:
+
+networks:
+  toplegalconsulting-network:

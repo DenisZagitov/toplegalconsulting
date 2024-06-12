@@ -1,116 +1,159 @@
 /* font-family: "PFDinCondensedRegular"; */
 @font-face {
-    font-family: "PFDinTextCondPro";
-    src: url("../fonts/PFDinCondensedRegular/PFDinCondensedRegular.eot");
-    src: url("../fonts/PFDinCondensedRegular/PFDinCondensedRegular.eot?#iefix")format("embedded-opentype"),
-    url("../fonts/PFDinCondensedRegular/PFDinCondensedRegular.woff") format("woff"),
-    url("../fonts/PFDinCondensedRegular/PFDinCondensedRegular.ttf") format("truetype");
-    font-style: normal;
-    font-weight: 400;
+	font-family: "PFDinTextCondPro";
+	src: url("../fonts/PFDinCondensedRegular/PFDinCondensedRegular.eot");
+	src: url("../fonts/PFDinCondensedRegular/PFDinCondensedRegular.eot?#iefix")format("embedded-opentype"),
+		url("../fonts/PFDinCondensedRegular/PFDinCondensedRegular.woff") format("woff"),
+		url("../fonts/PFDinCondensedRegular/PFDinCondensedRegular.ttf") format("truetype");
+	font-style: normal;
+	font-weight: 400;
 }
+
 /* font-family: "PFDinCondensedMedium"; */
 @font-face {
-    font-family: "PFDinTextCondPro";
-    src: url("../fonts/PFDinCondensedMedium/PFDinCondensedMedium.eot");
-    src: url("../fonts/PFDinCondensedMedium/PFDinCondensedMedium.eot?#iefix")format("embedded-opentype"),
-    url("../fonts/PFDinCondensedMedium/PFDinCondensedMedium.woff") format("woff"),
-    url("../fonts/PFDinCondensedMedium/PFDinCondensedMedium.ttf") format("truetype");
-    font-style: normal;
-    font-weight: 500;
+	font-family: "PFDinTextCondPro";
+	src: url("../fonts/PFDinCondensedMedium/PFDinCondensedMedium.eot");
+	src: url("../fonts/PFDinCondensedMedium/PFDinCondensedMedium.eot?#iefix")format("embedded-opentype"),
+		url("../fonts/PFDinCondensedMedium/PFDinCondensedMedium.woff") format("woff"),
+		url("../fonts/PFDinCondensedMedium/PFDinCondensedMedium.ttf") format("truetype");
+	font-style: normal;
+	font-weight: 500;
 }
+
 /* font-family: "PTSerifItalic"; */
 @font-face {
-    font-family: "PTSerif";
-    src: url("../fonts/PTSerifItalic/PTSerifItalic.eot");
-    src: url("../fonts/PTSerifItalic/PTSerifItalic.eot?#iefix")format("embedded-opentype"),
-    url("../fonts/PTSerifItalic/PTSerifItalic.woff") format("woff"),
-    url("../fonts/PTSerifItalic/PTSerifItalic.ttf") format("truetype");
-    font-style: italic;
-    font-weight: normal;
-}
-@font-face {
-    font-family: 'pf_din_text_cond_proregular';
-    src: url('../fonts/pfdintextcondpro-regular-webfont.eot');
-    src: url('../fonts/pfdintextcondpro-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/pfdintextcondpro-regular-webfont.woff2') format('woff2'),
-         url('../fonts/pfdintextcondpro-regular-webfont.woff') format('woff'),
-         url('../fonts/pfdintextcondpro-regular-webfont.ttf') format('truetype'),
-         url('../fonts/pfdintextcondpro-regular-webfont.svg#pf_din_text_cond_proregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@import url(https://fonts.googleapis.com/css?family=Ubuntu);
-@font-face {font-family: 'Ubuntu', sans-serif;
+	font-family: "PTSerif";
+	src: url("../fonts/PTSerifItalic/PTSerifItalic.eot");
+	src: url("../fonts/PTSerifItalic/PTSerifItalic.eot?#iefix")format("embedded-opentype"),
+		url("../fonts/PTSerifItalic/PTSerifItalic.woff") format("woff"),
+		url("../fonts/PTSerifItalic/PTSerifItalic.ttf") format("truetype");
+	font-style: italic;
 	font-weight: normal;
-    font-style: normal;
+}
+
+@font-face {
+	font-family: 'pf_din_text_cond_proregular';
+	src: url('../fonts/pfdintextcondpro-regular-webfont.eot');
+	src: url('../fonts/pfdintextcondpro-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/pfdintextcondpro-regular-webfont.woff2') format('woff2'),
+		url('../fonts/pfdintextcondpro-regular-webfont.woff') format('woff'),
+		url('../fonts/pfdintextcondpro-regular-webfont.ttf') format('truetype'),
+		url('../fonts/pfdintextcondpro-regular-webfont.svg#pf_din_text_cond_proregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+
+@font-face {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: normal;
+	font-style: normal;
 }
 
 /* font-family: "BeerRegular"; */
 @font-face {
-    font-family: "BeerRegular";
-    src: url("../fonts/BeerRegular/BeerRegular.eot");
-    src: url("../fonts/BeerRegular/BeerRegular.eot?#iefix")format("embedded-opentype"),
-    url("../fonts/BeerRegular/BeerRegular.woff") format("woff"),
-    url("../fonts/BeerRegular/BeerRegular.ttf") format("truetype");
-    font-style: normal;
-    font-weight: normal;
+	font-family: "BeerRegular";
+	src: url("../fonts/BeerRegular/BeerRegular.eot");
+	src: url("../fonts/BeerRegular/BeerRegular.eot?#iefix")format("embedded-opentype"),
+		url("../fonts/BeerRegular/BeerRegular.woff") format("woff"),
+		url("../fonts/BeerRegular/BeerRegular.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
 }
 
 @font-face {
-    font-family: "KelsonSansRegular";
-    src: url("../fonts/KelsonSansRegular/KelsonSansRegular.eot");
-    src: url("../fonts/KelsonSansRegular/KelsonSansRegular.eot?#iefix")format("embedded-opentype"),
-    url("../fonts/KelsonSansRegular/KelsonSansRegular.woff") format("woff"),
-    url("../fonts/KelsonSansRegular/KelsonSansRegular.ttf") format("truetype");
-    font-style: normal;
-    font-weight: normal;
+	font-family: "KelsonSansRegular";
+	src: url("../fonts/KelsonSansRegular/KelsonSansRegular.eot");
+	src: url("../fonts/KelsonSansRegular/KelsonSansRegular.eot?#iefix")format("embedded-opentype"),
+		url("../fonts/KelsonSansRegular/KelsonSansRegular.woff") format("woff"),
+		url("../fonts/KelsonSansRegular/KelsonSansRegular.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
 }
 
 /* font-family: "PFDinCondensedLightItalic"; */
 @font-face {
-    font-family: "PFDinCondensedLightItalic";
-    src: url("../fonts/PFDinCondensedLightItalic/PFDinCondensedLightItalic.eot");
-    src: url("../fonts/PFDinCondensedLightItalic/PFDinCondensedLightItalic.eot?#iefix")format("embedded-opentype"),
-    url("../fonts/PFDinCondensedLightItalic/PFDinCondensedLightItalic.woff") format("woff"),
-    url("../fonts/PFDinCondensedLightItalic/PFDinCondensedLightItalic.ttf") format("truetype");
-    font-style: normal;
-    font-weight: normal;
+	font-family: "PFDinCondensedLightItalic";
+	src: url("../fonts/PFDinCondensedLightItalic/PFDinCondensedLightItalic.eot");
+	src: url("../fonts/PFDinCondensedLightItalic/PFDinCondensedLightItalic.eot?#iefix")format("embedded-opentype"),
+		url("../fonts/PFDinCondensedLightItalic/PFDinCondensedLightItalic.woff") format("woff"),
+		url("../fonts/PFDinCondensedLightItalic/PFDinCondensedLightItalic.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
 }
 
-ul,ol{padding: 0;margin: 0;}
-li{list-style-type: none;}
-h1,h2,h3,h4,p, .h1, .h2, .h3, .h4{line-height: normal;margin: 0;padding: 0;}
-html {height: 100%;}
-body {line-height: normal;color: #000;height: 100%;}
+ul,
+ol {
+	padding: 0;
+	margin: 0;
+}
 
-.container{width: 1200px;}
+li {
+	list-style-type: none;
+}
 
-.body{
+h1,
+h2,
+h3,
+h4,
+p,
+.h1,
+.h2,
+.h3,
+.h4 {
+	line-height: normal;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	line-height: normal;
+	color: #000;
+	height: 100%;
+}
+
+.container {
+	width: 1200px;
+}
+
+.body {
 	color: #fff;
 }
-.header{	
+
+.header {
 	background-color: #fff;
 }
-a.logo{
+
+a.logo {
 	padding-top: 30px;
 	margin-bottom: 25px;
-	color:  #000000;
-	font-size: 36px;/* Приближение из-за подстановки шрифтов */
+	color: #000000;
+	font-size: 36px;
+	/* Приближение из-за подстановки шрифтов */
 	font-weight: 500;
 	text-align: left;
 	text-decoration: none;
 	display: block;
-	}
-a.logo:visited{
+}
+
+a.logo:visited {
 	text-decoration: none;
 }
-a.logo:hover{
+
+a.logo:hover {
 	text-decoration: none;
 }
-.logo img{
+
+.logo img {
 	height: 135px;
 }
-.phone{
+
+.phone {
 	display: block;
 	float: right;
 	text-align: right;
@@ -118,270 +161,332 @@ a.logo:hover{
 	margin-left: 130px;
 	margin-right: 130px;
 }
-.nphone{
+
+.nphone {
 	font-family: 'Ubuntu';
 	font-style: Regular;
 	font-size: 24px;
-    font-weight: bold;
+	font-weight: bold;
 	color: #FFD700;
 	text-align: right;
 }
-p.time{
+
+p.time {
 	display: block;
 	background-repeat: no-repeat;
 	padding-left: 12px;
 	margin-left: 13px;
 	font-family: Arial;
-	color:  #FFD700;
+	color: #FFD700;
 	font-size: 24px;
 	font-weight: bold;
-	text-align:left;
+	text-align: left;
 }
 
-a.zv{
-	color: #0084ff;
-	text-decoration: none; /* Убираем подчеркивание */
-    border-bottom: 1px dashed #0084ff; /* Добавляем свою линию */
-}
-a.zv:visited{
-	color: #0084ff;
-	text-decoration: none; /* Убираем подчеркивание */
-	 border-bottom: none; /* Добавляем свою линию */
-}
-a.zv:hover{
+a.zv {
 	color: #0084ff;
 	text-decoration: none;
-	border-bottom: none; /* Убираем подчеркивание */
+	/* Убираем подчеркивание */
+	border-bottom: 1px dashed #0084ff;
+	/* Добавляем свою линию */
 }
-p.modal_p{
+
+a.zv:visited {
+	color: #0084ff;
+	text-decoration: none;
+	/* Убираем подчеркивание */
+	border-bottom: none;
+	/* Добавляем свою линию */
+}
+
+a.zv:hover {
+	color: #0084ff;
+	text-decoration: none;
+	border-bottom: none;
+	/* Убираем подчеркивание */
+}
+
+p.modal_p {
 	font-family: PFDinTextCondPro;
-	color:  #000000;
-	font-size: 16px;/* Приближение из-за подстановки шрифтов */
+	color: #000000;
+	font-size: 16px;
+	/* Приближение из-за подстановки шрифтов */
 	font-weight: 500;
 	text-align: left;
-	transform: scaleX(1.0004);/* свойства ширины и высоты были исключены, поскольку было выполнено трансформирование */
+	transform: scaleX(1.0004);
+	/* свойства ширины и высоты были исключены, поскольку было выполнено трансформирование */
 	text-transform: uppercase;
 
 }
 
-input#inp2{
+input#inp2 {
 	padding-left: 10px;
-	margin:5px 0 15px;
+	margin: 5px 0 15px;
 	border-width: 2px;
-	border-color:  #cacaca;
+	border-color: #cacaca;
 	border-style: solid;
 	width: 100%;
 	height: 46px;
-	outline: none; /*// удаляет обводку в браузерах хром(желтая) и сафари(синяя)*/
+	outline: none;
+	/*// удаляет обводку в браузерах хром(желтая) и сафари(синяя)*/
 	font-family: PFDinTextCondPro;
-	color:  #000;
-	font-size: 23.99px;/* Приближение из-за подстановки шрифтов */
+	color: #000;
+	font-size: 23.99px;
+	/* Приближение из-за подстановки шрифтов */
 	font-weight: 400;
 	text-align: left;
-	transform: scaleX(1.0004);/* свойства ширины и высоты были исключены, поскольку было выполнено трансформирование */
+	transform: scaleX(1.0004);
+	/* свойства ширины и высоты были исключены, поскольку было выполнено трансформирование */
 }
 
-input.placeholder{
+input.placeholder {
 	color: #b2b2b2;
 }
 
-input#phone2{
+input#phone2 {
 	text-align: left;
 	padding-left: 10px;
-	margin:5px 0 15px;
+	margin: 5px 0 15px;
 	border-width: 2px;
-	border-color:  #cacaca;
+	border-color: #cacaca;
 	border-style: solid;
 	width: 100%;
 	height: 46px;
-	outline: none; /*// удаляет обводку в браузерах хром(желтая) и сафари(синяя)*/
+	outline: none;
+	/*// удаляет обводку в браузерах хром(желтая) и сафари(синяя)*/
 	font-family: PFDinTextCondPro;
-	color:  #000;
-	font-size: 23.99px;/* Приближение из-за подстановки шрифтов */
+	color: #000;
+	font-size: 23.99px;
+	/* Приближение из-за подстановки шрифтов */
 	font-weight: 400;
 	text-align: left;
-	transform: scaleX(1.0004);/* свойства ширины и высоты были исключены, поскольку было выполнено трансформирование */
+	transform: scaleX(1.0004);
+	/* свойства ширины и высоты были исключены, поскольку было выполнено трансформирование */
 }
 
 input.button4 {
 	top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-	 display: block;
-	 text-align: center;
-	 font-family:"KelsonSansRegular";
-	 color: #fff; /* цвет текста */
- 	 text-decoration: none; /* убирать подчёркивание у ссылок */
- 	 border-radius: 25px;
- 	 background: #e42640; /* фон кнопки */
- 	 border-color: #e42640;
-	border-style: solid;
- 	 padding: .7em 2em; /* отступ от текста */
- 	 outline: none; /* убирать контур в Mozilla */
-} 
-input.button4:hover { 
-	background: transparent;
-	border-width: 2px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	display: block;
+	text-align: center;
+	font-family: "KelsonSansRegular";
+	color: #fff;
+	/* цвет текста */
+	text-decoration: none;
+	/* убирать подчёркивание у ссылок */
+	border-radius: 25px;
+	background: #e42640;
+	/* фон кнопки */
 	border-color: #e42640;
 	border-style: solid;
-	color: #e42640;
- } 
-input.button4:active { 
+	padding: .7em 2em;
+	/* отступ от текста */
+	outline: none;
+	/* убирать контур в Mozilla */
+}
+
+input.button4:hover {
 	background: transparent;
 	border-width: 2px;
 	border-color: #e42640;
 	border-style: solid;
 	color: #e42640;
 }
-.part2{
-	background-color:  #101f3c;
+
+input.button4:active {
+	background: transparent;
+	border-width: 2px;
+	border-color: #e42640;
+	border-style: solid;
+	color: #e42640;
+}
+
+.part2 {
+	background-color: #101f3c;
 	text-transform: uppercase;
 
 }
+
 .navigation {
-   list-style: none; /* Отключение отображения маркеров. */
- 	overflow: hidden;
+	list-style: none;
+	/* Отключение отображения маркеров. */
+	overflow: hidden;
 }
+
 .navigation li {
 
-   float: left; /* Выстраивание элементов списка в один ряд. */
-   text-align: center;
-   width: 150px;   
+	float: left;
+	/* Выстраивание элементов списка в один ряд. */
+	text-align: center;
+	width: 150px;
 }
+
 .navigation li a {
 
 	font-family: PFDinTextCondPro;
-	color:  rgba(255, 255, 255, 0.9);
-	font-size: 18px;/* Приближение из-за подстановки шрифтов */
+	color: rgba(255, 255, 255, 0.9);
+	font-size: 18px;
+	/* Приближение из-за подстановки шрифтов */
 	font-weight: 500;
 	text-align: center;
-	display: block; /* Изменение отображения на блочное  */
-	padding: 10px 15px;  /* Внутри блочные отступы. */
+	display: block;
+	/* Изменение отображения на блочное  */
+	padding: 10px 15px;
+	/* Внутри блочные отступы. */
 	letter-spacing: 1px;
-	text-decoration: none; /* Устранение подчёркивания ссылок. */
-	position: relative; /* Это необходимо при использовании Internet Explorer 6  */
+	text-decoration: none;
+	/* Устранение подчёркивания ссылок. */
+	position: relative;
+	/* Это необходимо при использовании Internet Explorer 6  */
 }
+
 .navigation li a:hover {
-   background: #e42640; /* Цвет блока при наведении курсора. */
-   color: #fff;  /* Цвет текста при наведении курсора. */
+	background: #e42640;
+	/* Цвет блока при наведении курсора. */
+	color: #fff;
+	/* Цвет текста при наведении курсора. */
 }
-.part3{	
+
+.part3 {
 	background-position: left;
 	height: 460px;
 }
-.part1{	
+
+.part1 {
 	background-image: url(../img/11111.png);
 	background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+	background-repeat: no-repeat;
+	background-size: cover;
 	height: 200px;
 }
-.sliders{
+
+.sliders {
 	position: absolute;
 }
-p.tovar{
+
+p.tovar {
 	margin-top: 110px;
-	font-family:"KelsonSansRegular";
+	font-family: "KelsonSansRegular";
 	color: #fff;
 	text-transform: uppercase;
 	font-size: 42px;
 	font-weight: 500;
 	text-align: left;
 	text-shadow: black 2px 3px 15px;
-	margin-bottom: 40px;	
+	margin-bottom: 40px;
 }
+
 a.button1 {
-	 font-family:"KelsonSansRegular";
-	 margin-left: 30%;
-	 text-align: center;
-	 color: #fff; /* цвет текста */
- 	 text-decoration: none; /* убирать подчёркивание у ссылок */
- 	 border-radius: 25px;
- 	 background: #e42640; /* фон кнопки */
- 	 padding: .7em 2em; /* отступ от текста */
- 	 outline: none; /* убирать контур в Mozilla */
-} 
-a.button1:hover { 
+	font-family: "KelsonSansRegular";
+	margin-left: 30%;
+	text-align: center;
+	color: #fff;
+	/* цвет текста */
+	text-decoration: none;
+	/* убирать подчёркивание у ссылок */
+	border-radius: 25px;
+	background: #e42640;
+	/* фон кнопки */
+	padding: .7em 2em;
+	/* отступ от текста */
+	outline: none;
+	/* убирать контур в Mozilla */
+}
+
+a.button1:hover {
 	background: transparent;
 	border-width: 2px;
 	border-color: #e42640;
 	border-style: solid;
 	text-shadow: black 0 2px 3px;
- } 
-a.button1:active { 
+}
+
+a.button1:active {
 	background: transparent;
 	border-width: 2px;
 	border-color: #e42640;
 	border-style: solid;
-	text-shadow: black 0 2px 3px; } /* при нажатии */
-.part4{
+	text-shadow: black 0 2px 3px;
+}
+
+/* при нажатии */
+.part4 {
 	clear: both;
-}	
-p.all_zag{ 
-	font-family:"KelsonSansRegular";
+}
+
+p.all_zag {
+	font-family: "KelsonSansRegular";
 	font-size: 36px;
 	font-weight: 700;
 	margin-top: 30px;
 	margin-bottom: 30px;
 
 }
-p.pnews{
+
+p.pnews {
 	font-family: Arial;
-	color:  #000000;
+	color: #000000;
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 26px;
 	text-align: left;
 	margin-bottom: 15px;
 }
-p.pnews1{
+
+p.pnews1 {
 	font-family: Arial;
-	color:  #000000;
+	color: #000000;
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 26px;
 	text-align: left;
 	margin-bottom: 40px;
 }
-.part4 img{
-    float: left;
-    width: 100px;
-    height: auto;
-    margin-right: 20px;
-    margin-bottom: 30px;
+
+.part4 img {
+	float: left;
+	width: 100px;
+	height: auto;
+	margin-right: 20px;
+	margin-bottom: 30px;
 }
 
-p.data{
+p.data {
 	font-family: Arial;
 	font-size: 12px;
-	color:#555;
+	color: #555;
 }
-a.newstext{
-	font-family:"KelsonSansRegular";
+
+a.newstext {
+	font-family: "KelsonSansRegular";
 	font-size: 18px;
 	text-decoration: none;
 	color: #000;
 }
-a.newstext:hover{
+
+a.newstext:hover {
 	text-decoration: underline;
 }
-.part5{
-	background-color:  #f5f5f5;
+
+.part5 {
+	background-color: #f5f5f5;
 	padding-bottom: 80px;
 	text-align: center;
 }
-.plus img{
+
+.plus img {
 	display: block;
 	margin: 0 auto 0;
 }
 
 
-.plus p{
+.plus p {
 	margin-top: 30px;
 	font-family: Arial;
-	color:  #555555;
+	color: #555555;
 	font-size: 16px;
 	font-weight: 400;
 	letter-spacing: 0.16px;
@@ -389,17 +494,18 @@ a.newstext:hover{
 	text-align: center;
 }
 
-.part6 .all_zag{
+.part6 .all_zag {
 	text-align: center;
 
 }
 
-.part6 img{
+.part6 img {
 	margin-top: 90px;
 	margin-bottom: 15px;
 }
-.slider p{
-	font-family:"KelsonSansRegular";
+
+.slider p {
+	font-family: "KelsonSansRegular";
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
 	font-weight: 400;
@@ -407,51 +513,62 @@ a.newstext:hover{
 	margin-top: 20px;
 	margin-bottom: 5px;
 }
-.part6 span{
+
+.part6 span {
 	display: block;
 	font-size: 14px;
-    color: #555;
-    margin-bottom: 40px;
-}
-.part7{
-	background-color:  #101f3c;
-	padding-top: 40px;
-	padding-bottom: 40px;
-	
-}
-.part7 p{
-	font-family: PTSerif;
-	color:  rgba(255, 255, 255, 0.9);
-	font-size: 36px;/* Приближение из-за подстановки шрифтов */
-	font-style: italic;
-	line-height: 50px;/* Приближение из-за подстановки шрифтов */
-	text-align: center;
-}
-.part7 hr{
-	width: 150px;
-}
-.part8 .all_zag{
-	text-align: center;
-	
+	color: #555;
+	margin-bottom: 40px;
 }
 
-.part8 img{
+.part7 {
+	background-color: #101f3c;
+	padding-top: 40px;
+	padding-bottom: 40px;
+
+}
+
+.part7 p {
+	font-family: PTSerif;
+	color: rgba(255, 255, 255, 0.9);
+	font-size: 36px;
+	/* Приближение из-за подстановки шрифтов */
+	font-style: italic;
+	line-height: 50px;
+	/* Приближение из-за подстановки шрифтов */
+	text-align: center;
+}
+
+.part7 hr {
+	width: 150px;
+}
+
+.part8 .all_zag {
+	text-align: center;
+
+}
+
+.part8 img {
 	float: left;
 	clear: both;
-    height: auto;
-    margin-right: 20px;    
+	height: auto;
+	margin-right: 20px;
 }
-.otztext p{
+
+.otztext p {
 	font-family: "PFDinCondensedLightItalic";
-	color:  #000000;
+	color: #000000;
 	line-height: 4px;
-	font-size: 20px;/* Приближение из-за подстановки шрифтов */
+	font-size: 20px;
+	/* Приближение из-за подстановки шрифтов */
 	font-style: italic;
-	line-height: 24px;/* Приближение из-за подстановки шрифтов */
+	line-height: 24px;
+	/* Приближение из-за подстановки шрифтов */
 	text-align: left;
 }
-p.otpname{
-	font-family:"KelsonSansRegular";
+
+p.otpname {
+	font-family: "KelsonSansRegular";
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
 	font-weight: 400;
@@ -459,233 +576,288 @@ p.otpname{
 	margin-top: 20px;
 	margin-bottom: 5px;
 }
-.part8 span{
+
+.part8 span {
 	font-size: 14px;
-    color: #555;
+	color: #555;
 
 }
-.otzinfo{
+
+.otzinfo {
 	margin-top: 40px;
 }
-.otztext{
+
+.otztext {
 	margin: 19px 0px 30px;
-    padding: 25px 39px 32px;
+	padding: 25px 39px 32px;
 	background-color: #f5f5f5;
-    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);	
+	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
 }
-.readmore{
+
+.readmore {
 	display: block;
 	text-align: center;
 	margin-bottom: 50px;
 }
+
 a.button2 {
-	font-family:"KelsonSansRegular";
+	font-family: "KelsonSansRegular";
 	background: transparent;
 	text-align: center;
 	border-width: 2px;
 	border-color: #e42640;
 	border-style: solid;
-	color: #e42640; /* цвет текста */
- 	text-decoration: none; /* убирать подчёркивание у ссылок */
- 	border-radius: 25px;
- 	padding: .7em 4em; /* отступ от текста */
- 	outline: none; /* убирать контур в Mozilla */
-} 
-a.button2:hover { 
+	color: #e42640;
+	/* цвет текста */
+	text-decoration: none;
+	/* убирать подчёркивание у ссылок */
+	border-radius: 25px;
+	padding: .7em 4em;
+	/* отступ от текста */
+	outline: none;
+	/* убирать контур в Mozilla */
+}
+
+a.button2:hover {
 	background: #e42640;
 	border-width: 2px;
 	border-color: #e42640;
-	color: #fff;	
-} 
-.part9{
+	color: #fff;
+}
+
+.part9 {
 	padding-bottom: 40px;
 }
-.part9 .all_zag{
+
+.part9 .all_zag {
 	text-align: center;
 }
-.part9 img{
+
+.part9 img {
 	margin-top: 30px;
 	text-align: center;
 
 }
-.part10{
+
+.part10 {
 	background-color: #fff;
 }
-.part10 .all_zag{
+
+.part10 .all_zag {
 	text-align: center;
 }
-.part10 span{
+
+.part10 span {
 	display: block;
 	font-size: 16px;
-    color: #555;
-    margin-bottom: 40px;
-    text-align: center;
+	color: #555;
+	margin-bottom: 40px;
+	text-align: center;
 }
 
 .part10 .inp_form p {
 	font-family: PFDinTextCondPro;
-	color:  #000000;
-	font-size: 16px;/* Приближение из-за подстановки шрифтов */
+	color: #000000;
+	font-size: 16px;
+	/* Приближение из-за подстановки шрифтов */
 	font-weight: 500;
 	text-align: left;
-	transform: scaleX(1.0004);/* свойства ширины и высоты были исключены, поскольку было выполнено трансформирование */
+	transform: scaleX(1.0004);
+	/* свойства ширины и высоты были исключены, поскольку было выполнено трансформирование */
 	text-transform: uppercase;
 }
+
 input.button3 {
-	 display: block;
-	 font-family:"KelsonSansRegular";
-	 color: #fff; /* цвет текста */
- 	 text-decoration: none; /* убирать подчёркивание у ссылок */
- 	 border-radius: 25px;
- 	 background: #e42640; /* фон кнопки */
- 	 border-color: #e42640;
-	border-style: solid;
- 	 padding: .7em 2em; /* отступ от текста */
- 	 outline: none; /* убирать контур в Mozilla */
-} 
-input.button3:hover { 
-	background: transparent;
-	border-width: 2px;
+	display: block;
+	font-family: "KelsonSansRegular";
+	color: #fff;
+	/* цвет текста */
+	text-decoration: none;
+	/* убирать подчёркивание у ссылок */
+	border-radius: 25px;
+	background: #e42640;
+	/* фон кнопки */
 	border-color: #e42640;
 	border-style: solid;
-	color: #e42640;
- } 
-input.button3:active { 
+	padding: .7em 2em;
+	/* отступ от текста */
+	outline: none;
+	/* убирать контур в Mozilla */
+}
+
+input.button3:hover {
 	background: transparent;
 	border-width: 2px;
 	border-color: #e42640;
 	border-style: solid;
 	color: #e42640;
 }
-input#inp1{
-	padding-left: 10px;
-	margin:5px 0 15px;
+
+input.button3:active {
+	background: transparent;
 	border-width: 2px;
-	border-color:  #cacaca;
+	border-color: #e42640;
+	border-style: solid;
+	color: #e42640;
+}
+
+input#inp1 {
+	padding-left: 10px;
+	margin: 5px 0 15px;
+	border-width: 2px;
+	border-color: #cacaca;
 	border-style: solid;
 	width: 366px;
 	height: 46px;
-	outline: none; /*// удаляет обводку в браузерах хром(желтая) и сафари(синяя)*/
+	outline: none;
+	/*// удаляет обводку в браузерах хром(желтая) и сафари(синяя)*/
 	font-family: PFDinTextCondPro;
-	color:  #000;
-	font-size: 23.99px;/* Приближение из-за подстановки шрифтов */
+	color: #000;
+	font-size: 23.99px;
+	/* Приближение из-за подстановки шрифтов */
 	font-weight: 400;
 	text-align: left;
-	transform: scaleX(1.0004);/* свойства ширины и высоты были исключены, поскольку было выполнено трансформирование */
+	transform: scaleX(1.0004);
+	/* свойства ширины и высоты были исключены, поскольку было выполнено трансформирование */
 }
 
-input.placeholder{
+input.placeholder {
 	color: #b2b2b2;
 }
 
-input#phone1{
+input#phone1 {
 	text-align: left;
 	padding-left: 10px;
-	margin:5px 0 15px;
+	margin: 5px 0 15px;
 	border-width: 2px;
-	border-color:  #cacaca;
+	border-color: #cacaca;
 	border-style: solid;
 	width: 366px;
 	height: 46px;
-	outline: none; /*// удаляет обводку в браузерах хром(желтая) и сафари(синяя)*/
+	outline: none;
+	/*// удаляет обводку в браузерах хром(желтая) и сафари(синяя)*/
 	font-family: PFDinTextCondPro;
-	color:  #000;
-	font-size: 23.99px;/* Приближение из-за подстановки шрифтов */
+	color: #000;
+	font-size: 23.99px;
+	/* Приближение из-за подстановки шрифтов */
 	font-weight: 400;
 	text-align: left;
-	transform: scaleX(1.0004);/* свойства ширины и высоты были исключены, поскольку было выполнено трансформирование */
+	transform: scaleX(1.0004);
+	/* свойства ширины и высоты были исключены, поскольку было выполнено трансформирование */
 }
 
 
-.part11{
+.part11 {
 	height: 600px;
 
-	
+
 }
-.map{
+
+.map {
 	width: 100%;
 	position: absolute;
 	opacity: .99;
-	
+
 }
-.addressmap{
+
+.addressmap {
 	z-index: 30000;
 	margin-top: 100px;
-	background-color: rgba(255, 255, 255, 0.7); /* Цвет фона и значение прозрачности */
+	background-color: rgba(255, 255, 255, 0.7);
+	/* Цвет фона и значение прозрачности */
 	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
-    padding: 35px; 
+	padding: 35px;
 }
-.addressmap p{
-	font-family:"KelsonSansRegular";
+
+.addressmap p {
+	font-family: "KelsonSansRegular";
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
 	font-weight: 400;
-	font-size: 16px;	
+	font-size: 16px;
 	margin-bottom: 5px;
 }
-.addressmap span{
+
+.addressmap span {
 	display: block;
 	font-size: 14px;
-    color: #555;
-    padding-bottom: 30px;
+	color: #555;
+	padding-bottom: 30px;
 }
-.addressmap a{
+
+.addressmap a {
 	display: block;
 	font-size: 14px;
-    color: #555;
-    padding-bottom: 30px;
+	color: #555;
+	padding-bottom: 30px;
 }
-.part12{
-	background-color:  #101f3c;
+
+.part12 {
+	background-color: #101f3c;
 	height: 45px;
 }
 
 .part12 p {
 	display: block;
 	font-family: Arial;
-	color:  #fff !important;
+	color: #fff !important;
 	text-align: left;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 18px;
-    padding: 15px 0px;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 18px;
+	padding: 15px 0px;
 }
-p.rs{
+
+p.rs {
 	text-align: right;
 }
-.part12 a{
+
+.part12 a {
 	color: #fff;
 
 }
 
-.call_back{
--webkit-transform: rotate(-90deg);  /*Поворот блока с текстом кнопки  на 90 градусов*/
--moz-transform: rotate(-90deg);
--ms-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
-transform: rotate(-90deg);
-position:fixed; /*фиксированная позиция кнопки при прокрутке*/
-z-index:999;
-right: 0px; /*отступ справа*/
-top: 35%; /*отступ сверху*/
-margin-right:-45px; /*отрицательный отступ справа */
+.call_back {
+	-webkit-transform: rotate(-90deg);
+	/*Поворот блока с текстом кнопки  на 90 градусов*/
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+	position: fixed;
+	/*фиксированная позиция кнопки при прокрутке*/
+	z-index: 999;
+	right: 0px;
+	/*отступ справа*/
+	top: 35%;
+	/*отступ сверху*/
+	margin-right: -45px;
+	/*отрицательный отступ справа */
 }
 
 /*Стили для ссылки*/
-.call_back a{
-color:#fff;/* цвет текста */
-display:block;
-background: #e42640; /* фон кнопки */
-font-family:"KelsonSansRegular";
-font-size:1.2em; /*размер шрифта*/
-text-align:center; /*выравнивание по центру*/
-padding:10px 20px; /*внутренние отступы*/
+.call_back a {
+	color: #fff;
+	/* цвет текста */
+	display: block;
+	background: #e42640;
+	/* фон кнопки */
+	font-family: "KelsonSansRegular";
+	font-size: 1.2em;
+	/*размер шрифта*/
+	text-align: center;
+	/*выравнивание по центру*/
+	padding: 10px 20px;
+	/*внутренние отступы*/
 
-border-radius:25px; /*радиус скругления углов*/
-border:1px solid #fff; /*рамка вокруг кнопки*/
-text-decoration: none; /* убирать подчёркивание у ссылок */
-padding: .7em 2em; /* отступ от текста */
-outline: none; /* убирать контур в Mozilla */
+	border-radius: 25px;
+	/*радиус скругления углов*/
+	border: 1px solid #fff;
+	/*рамка вокруг кнопки*/
+	text-decoration: none;
+	/* убирать подчёркивание у ссылок */
+	padding: .7em 2em;
+	/* отступ от текста */
+	outline: none;
+	/* убирать контур в Mozilla */
 }
-
-

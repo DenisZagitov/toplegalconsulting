@@ -75,7 +75,7 @@
 				<table width="100%" border="0" cellspacing="0" cellpadding="2">
 					<tr>
 						<td>
-							<marquee behavior="scroll" direction="right"> <img src="/img/img.png" /> </marquee>
+							<img src="/img/img.png" />
 						</td>
 					</tr>
 					<tr class="style8" align="center">
