@@ -2,7 +2,7 @@
 function bd_connect()
 {
     global $db;
-    $db = new mysqli("db", "user", "password", "toplegalconsulting");
+    $db = new mysqli("localhost", "root", "", "toplegalconsulting");
 
     // проверяем соединение
     if ($db->connect_errno) {

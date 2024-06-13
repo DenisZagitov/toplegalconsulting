@@ -70,17 +70,12 @@
 			</td>
 		</tr>
 		<tr class="style8">
-			<td valign="top" width="40%">
-				<strong>Наш сайт</strong>
+			<td valign="top" width="20%">
+				
 				<table width="100%" border="0" cellspacing="0" cellpadding="2">
-					<tr>
-						<td>
-							<img src="/img/img.png" />
-						</td>
-					</tr>
-					<tr class="style8" align="center">
+					<tr class="style8">
 						<strong class="style2">
-							<td>Категории договоров:<br>
+							<td style="padding:5px 0px 5px 5px; color:#2f2f2fe8;">Категории договоров:<br>
 						</strong>
 						<table width="100%" border="0" cellspaing="0" cellpadding="2">
 							<?php
@@ -89,8 +84,8 @@
 							while ($row_types = mysqli_fetch_array($q_types, MYSQLI_NUM)) {
 								echo '
 									<tr>
-										<td align="left" ><p style="margin-left: 20px"><span class="style5">
-										<a href="/?vid=catalog&type=' . $row_types[0] . '">' . $row_types[1] . '</a>
+										<td align="left" ><p style="margin-left: 0px"><span class="style5">
+											- <a href="/?vid=catalog&type=' . $row_types[0] . '">' . $row_types[1] . '</a>
 										</span></p></td>
 									</tr>';
 							}
@@ -107,11 +102,26 @@
 					if (isset($_SESSION['name_client'])) echo "Здравствуйте, " . $_SESSION['name_client'] . "! <br> <a href='/reg.php?exit=1'> Выход</a>";
 					else
 						echo '
-			<form method="get" action="/reg.php">
-            Гость. Авторизация:
-			<br>e-mail:  <input name="mail" type="text" size="30" maxlength="50" />
-			<br>пароль:  <input name="pas" type="password" size="20" maxlength="20" /><input class="btn-new" name="enter" type="submit" value="Войти" />
-			<br><a href="/reg.php"><button class="btn-new">Регистрация</button></a>
+			<form method="get" action="/reg.php" style = "padding:10px;">
+            
+            <div style="width:100%; color:#2f2f2fe8;">
+            <p>Гость. Авторизация:</p>
+
+				<div style = "display:flex;" padding: 5px 0px 5px 0px;>
+					<span style = "width:10%; min-width:70px;"> e-mail:</span>
+					<input name="mail" type="text" size="30" maxlength="50" style="width:85%;"/>
+				</div>
+				<div style = "display:flex; padding: 5px 0px 5px 0px;">
+					<span style = "width:10%; min-width:70px;"> пароль: </span>
+					<input name="pas" type="password" size="20" maxlength="20" style="width:85%;" />
+				</div>
+
+				<div style = "padding: 5px; display: flex; justify-content: center;">
+					<input class="btn-new" name="enter" type="submit" value="Войти" style = "width:50%"/>
+				</div>
+					<a href="/reg.php" style = "font-size:13px;">Если у вас еще нет аккаунта, зарегистрируйтесь</a>
+				
+			</div>
 			</form></strong>';
 					?>
 			</td>

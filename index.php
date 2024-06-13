@@ -39,23 +39,23 @@ ON `sotrudniki`.`Табельный номер`=`kartochka_dogovora`.`Ответ
 ON `kontragentu`.`Код`=`kartochka_dogovora`.`Контрагент`) ON `vid_dogovora`.`ID_вида`=`kartochka_dogovora`.`ID_вида` ORDER BY `Сумма_договора` ASC LIMIT 5";
   }
   ?>
-  <strong>
+  <strong style = "color:#2f2f2fe8;">
     <?= $zag; ?></strong><br />
   <?php
   $color = "red";
   $q = mysqli_query($db, $sql);
   if (mysqli_num_rows($q) > 0) {
-    echo ' <table width="100%" border="2" cellspacing="2" cellpadding="2">
+    echo ' <table border="2" cellspacing="2" cellpadding="2" style="color:#2f2f2fe8; font-size:13px; width: 98%; margin:10px;">
     <tr>
-        <td width="50" bgcolor=#F0F8FF>&nbsp;</td>
-        <td width="60" align="center" bgcolor=#F0F8FF><b><font size=5>';
-    if ($vid == 'catalog') echo  '<a href="/?vid=catalog&type=' . $_GET['type'] . '&sort=Номер_договора">Номер_договора </font></a>';
-    else echo 'Номер_договора</font></b>';
+        <td style="min-width: 50px; width:5%;" bgcolor=#F0F8FF>&nbsp;</td>
+        <td style="min-width: 10px; width:5%;" align="center" bgcolor=#F0F8FF><b>';
+    if ($vid == 'catalog') echo  '<a href="/?vid=catalog&type=' . $_GET['type'] . '&sort=Номер_договора">Номер договора</a>';
+    else echo 'Номер договора</b>';
     echo '</td>
-        <td width="300" align="center" bgcolor=#F0F8FF><b><font size=5>Вид договора</font></b></td>
-        <td  width="100" align="center" bgcolor=#F0F8FF><b><font size=5>Сумма договора</font></b></td>
-        <td width="120" align="center" bgcolor=#F0F8FF><b><font size=5>Контрагент</font></b></td>
-        <td width="120" align="center" bgcolor=#F0F8FF><b><font size=5>Ответственный юрист</font></b></td>
+        <td style="min-width:100px; width:30%" align="center" bgcolor=#F0F8FF><b>Вид договора</b></td>
+        <td style="min-width:100px; width:20%" align="center" bgcolor=#F0F8FF><b>Сумма договора</b></td>
+        <td style="min-width:100px; width:20%" align="center" bgcolor=#F0F8FF><b>Контрагент</b></td>
+        <td style="min-width:100px; width:20%" align="center" bgcolor=#F0F8FF><b>Ответственный юрист</b></td>
     </tr>';
     $show = 0;
 
@@ -74,11 +74,11 @@ ON `kontragentu`.`Код`=`kartochka_dogovora`.`Контрагент`) ON `vid_d
       else  echo '<a href="/read.php">';
       echo '
         <img src="img/logo2.png" alt="загрузить" width="50" height="50" border="0"/></a></td>
-            <td align="center"><font size=5>' . $row['Номер_договора'] . '</font></td>
-            <td align="left"><font size=5>' . $row['Вид договора'] . '</font></td>
-            <td align="center"><font size=5>' . $row['Сумма_договора'] . '</font></td>
-            <td align="left"><font size=5>' . $row['Контрагент'] . '</font></td>
-            <td align="center"><font size=5>' . $row['ФИО'] . '</font></td>
+            <td align="center">' . $row['Номер_договора'] . '</td>
+            <td align="left">' . $row['Вид договора'] . '</td>
+            <td align="center">' . $row['Сумма_договора'] . '</td>
+            <td align="left">' . $row['Контрагент'] . '</td>
+            <td align="center">' . $row['ФИО'] . '</td>
         </tr>';
     }
     echo "</table>";
