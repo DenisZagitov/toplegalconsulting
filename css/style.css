@@ -21,7 +21,8 @@ html {
 .header,
 .footer {
 	text-align: center;
-	background-color: #ffffff;
+	background-color: black;
+	color: white
 	padding: 20px 0;
 }
 

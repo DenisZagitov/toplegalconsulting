@@ -1,9 +1,5 @@
-<tr>
-<td colspan="2" align="center">
-	<b>
-		<div style="color: Navy;	font-size: 40px;font-weight: bold; background: #ffffff">
-			Удачного сотрудничества!
-		</div>
-	</b>
-</td>
-</tr>
+<footer class="footer">
+    <div class="container text-center py-4">
+        <p class="mb-0">Удачного сотрудничества!</p>
+    </div>
+</footer>
