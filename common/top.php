@@ -1,10 +1,10 @@
 ﻿<div class="main-container">
     <header class="blog-header py-3">
-        <div class="row flex-nowrap justify-content-between align-items-center">
-            <div class="logo-container col-md-6">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="logo-container">
                 <a href="#" class="logo"><img src="img/hotpng.png" alt="Лого"></a>
             </div>
-            <div class="contact-info col-md-6 d-flex align-items-center justify-content-end">
+            <div class="contact-info d-flex align-items-center">
                 <div class="phone-info">
                     <p class="phone-number d-flex align-items-center">
                         <img src="img/call.png" width="50" height="50" class="mr-2">
@@ -19,6 +19,8 @@
         </div>
     </header>
 
+
+
     <nav class="main-nav">
         <div class="container d-flex flex-column flex-md-row justify-content-between">
             <a class="nav-link py-2 d-none d-md-inline-block" href="/">Главная</a>
@@ -31,5 +33,5 @@
         </div>
     </nav>
 
-    <div id="title" class="text-center" style="color: Navy; font-size: 40px;font-weight: bold;">Юридическая компания <br>«TopLegalConsulting»</div>
+    <div class="text-center">Юридическая компания «TopLegalConsulting»</div>
 </div>

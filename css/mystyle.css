@@ -1,20 +1,234 @@
-header{
-    background: black;
-    display: flex;
+/* Основные стили */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
 }
+
+header {
+    background: #00274d;
+    /* Более глубокий темно-синий */
+    color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    flex: 1;
+    /* Это позволит логотипу занимать все доступное пространство слева */
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* Это выровняет контактную информацию по правому краю */
+    flex: 1;
+}
+
+
 .phone-number img,
 .working-hours img {
     margin-right: 10px;
 }
+
 .phone-number,
 .working-hours {
     display: flex;
     align-items: center;
+    font-size: 14px;
+    font-weight: bold;
 }
 
-.main-content{
-display: flex;
+.main-content {
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    /* Занимает всю ширину */
+    max-width: 1200px;
+    /* Ограничение ширины */
+    margin: 0 auto;
+    /* Центрирование */
 }
-.main-nav{
-    background-color: navy;
+
+.main-nav {
+    background-color: #00274d;
+    padding: 10px 0;
+}
+
+.main-nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.main-nav a:hover {
+    background-color: #004080;
+    border-radius: 5px;
+}
+
+.text-center {
+    color: #00274d;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.contract-category {
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+.auth-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.table-responsive {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    background-color: #004080;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+}
+
+tbody td {
+    padding: 10px;
+    text-align: center;
+}
+
+td a img {
+    border: 0;
+    transition: transform 0.3s ease;
+}
+
+td a img:hover {
+    transform: scale(1.1);
+}
+
+.table-primary {
+    background-color: #cce0ff;
+    /* Легкий синий оттенок */
+}
+
+/* Дополнительные стили для кнопок */
+button,
+.btn {
+    background-color: #004080;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover,
+.btn:hover {
+    background-color: #0059b3;
+}
+
+/* Стили для ссылок */
+a {
+    color: #004080;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0059b3;
+}
+
+/* Стили для заголовков */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Georgia', serif;
+    color: #00274d;
+}
+
+/* Стили для таблиц */
+table {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+thead th {
+    background-color: #004080;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+tbody td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Стили для ячеек таблицы */
+td img {
+    max-width: 50px;
+    max-height: 50px;
+    margin: auto;
+    display: block;
+}
+
+td {
+    vertical-align: middle;
+}
+
+thead th,
+tbody td {
+    padding: 12px;
+}
+
+/* Стили для footer */
+.footer {
+    background-color: #00274d;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    bottom: 0;
+    width: 100%;
 }

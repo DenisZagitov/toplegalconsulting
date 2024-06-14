@@ -6,7 +6,8 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL ^ E_NOTICE);
 error_reporting(E_ALL);
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 
 <head>
   <meta name="description" content="TopLegalConsulting">
@@ -15,96 +16,136 @@ error_reporting(E_ALL);
   <meta name="author" content="Denis Zagitov">
   <meta http-equiv="Content-Type" content="text/html">
   <title>Юридическая компания «TopLegalConsulting»</title>
-  <link href="img/icon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link href="img/icon.ico" rel="shortcut icon" type="image/x-icon">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/mystyle.css">
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
-
 
 <body class="body">
 
-  <?php
-  include("common/top.php");
-  ?>
-  <div class="main-content">
-    <?php
-    include("common/top1.php");
-    ?>
+  <div class="main-container">
+    <header class="blog-header py-3">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="logo-container">
+          <a href="#" class="logo"><img src="img/hotpng.png" alt="Лого"></a>
+        </div>
+        <div class="contact-info d-flex align-items-center">
+          <div class="phone-info d-flex flex-column align-items-end">
+            <p class="phone-number d-flex align-items-center">
+              <img src="img/call.png" width="50" height="50" class="mr-2">
+              +7 (3452) 500-045
+            </p>
+            <p class="working-hours d-flex align-items-center">
+              <img src="img/time.png" width="50" height="50" class="mr-2">
+              9.00 - 20.00
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
 
-    <div class="container">
-      <?php
+    <nav class="main-nav">
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="nav-link py-2 d-none d-md-inline-block" href="/">Главная</a>
+        <a class="nav-link py-2 d-none d-md-inline-block" href="/about.php">О нас</a>
+        <a class="nav-link py-2 d-none d-md-inline-block" href="/aboutdogovor.php">Услуги</a>
+        <a class="nav-link py-2 d-none d-md-inline-block" href="/otchet.php">Договора</a>
+        <a class="nav-link py-2 d-none d-md-inline-block" href="/read.php">Помощь</a>
+        <a class="nav-link py-2 d-none d-md-inline-block" href="news.php">Новости</a>
+        <a class="nav-link py-2 d-none d-md-inline-block" href="/contacts.php">Контакты</a>
+      </div>
+    </nav>
 
-      if (isset($_GET['vid'])) {
-        $vid = "catalog";
-        $zag = "Наши договора";
-        $sql = "SELECT `kartochka_dogovora`.`Номер_договора`,`vid_dogovora`.`Вид договора`,`kartochka_dogovora`.`Сумма_договора`, 
-                `kontragentu`.`Контрагент`,`sotrudniki`.`ФИО`
-                FROM `vid_dogovora` INNER JOIN (`kontragentu` INNER JOIN (`sotrudniki` INNER JOIN `kartochka_dogovora` 
-                ON `sotrudniki`.`Табельный номер`=`kartochka_dogovora`.`Ответственный`) 
-                ON `kontragentu`.`Код`=`kartochka_dogovora`.`Контрагент`) ON `vid_dogovora`.`ID_вида`=`kartochka_dogovora`.`ID_вида` AND `kartochka_dogovora`.`ID_вида`=" . $_GET['type'] . " 
-                    ";
-        if (isset($_GET['sort']))
-          if ($_GET['sort'] == 'Номер_договора') $sql .= " ORDER BY `Номер_договора` ASC";
-          else $sql .= " ORDER BY `Сумма_договора` ASC";
-      } else {
-        $vid = 'popular';
-        $zag = 'Самые популярные';
-        $sql = "SELECT `kartochka_dogovora`.`Номер_договора`,`vid_dogovora`.`Вид договора`,`kartochka_dogovora`.`Сумма_договора`, `kontragentu`.`Контрагент`,`sotrudniki`.`ФИО`
-                FROM `vid_dogovora` INNER JOIN (`kontragentu` INNER JOIN (`sotrudniki` INNER JOIN `kartochka_dogovora` 
-                ON `sotrudniki`.`Табельный номер`=`kartochka_dogovora`.`Ответственный`) 
-                ON `kontragentu`.`Код`=`kartochka_dogovora`.`Контрагент`) ON `vid_dogovora`.`ID_вида`=`kartochka_dogovora`.`ID_вида` ORDER BY `Сумма_договора` ASC LIMIT 5";
-      }
-      ?>
-      <strong>
-        <?= $zag; ?></strong><br />
-      <?php
-      $color = "red";
-      $q = mysqli_query($db, $sql);
-      if (mysqli_num_rows($q) > 0) {
-        echo ' <table width="100%" border="2" cellspacing="2" cellpadding="2">
-        <tr>
-            <td width="50" bgcolor=#F0F8FF>&nbsp;</td>
-            <td width="60" align="center" bgcolor=#F0F8FF><b><font size=5>';
-        if ($vid == 'catalog') echo  '<a href="/?vid=catalog&type=' . $_GET['type'] . '&sort=Номер_договора">Номер_договора </font></a>';
-        else echo 'Номер_договора</font></b>';
-        echo '</td>
-            <td width="300" align="center" bgcolor=#F0F8FF><b><font size=5>Вид договора</font></b></td>
-            <td  width="100" align="center" bgcolor=#F0F8FF><b><font size=5>Сумма договора</font></b></td>
-            <td width="120" align="center" bgcolor=#F0F8FF><b><font size=5>Контрагент</font></b></td>
-            <td width="120" align="center" bgcolor=#F0F8FF><b><font size=5>Ответственный юрист</font></b></td>
-        </tr>';
-        $show = 0;
+    <div class="text-center my-4">Юридическая компания «TopLegalConsulting»</div>
+  </div>
 
-        while ($row = mysqli_fetch_array($q, MYSQLI_ASSOC)) {
-          if ($vid == 'catalog' and $show == 0) {
-            echo '
-                <tr class="style2">
-                <td colspan="8" align="center"><strong>' . $row['Вид договора'] . '</strong></td>
+  <div class="container my-4">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="content-container">
+          <div id="contracts-section">
+            <strong class="section-title">Категории договоров:<br></strong>
+            <div class="Category">
+              <span class="contract-category">
+                <p><a href="/?vid=catalog&amp;type=1">Договор на сопровождение исполнительного производства по земельно-имущественным спорам</a></p>
+              </span>
+              <span class="contract-category">
+                <p><a href="/?vid=catalog&amp;type=2">Договор оказания юридических услуг в пользу исполнителя</a></p>
+              </span>
+              <span class="contract-category">
+                <p><a href="/?vid=catalog&amp;type=3">Договор оказания услуг с адвокатом</a></p>
+              </span>
+            </div>
+          </div>
+
+          <div class="auth-container">
+            <div id="auth-section">
+              <strong class="auth-title">
+                <form method="get" action="/reg.php">
+                  Авторизация:
+                  <p>e-mail: <input name="mail" type="text" size="30" maxlength="50"></p>
+                  <p>пароль: <input name="pas" type="password" size="30" maxlength="20"> </p>
+                  <p><input class="btn btn-primary" name="enter" type="submit" value="Войти">
+                    <a href="/reg.php" class="btn btn-secondary">Регистрация</a>
+                  </p>
+                </form>
+              </strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <div class="container my-4">
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Номер договора</th>
+                  <th scope="col">Вид договора</th>
+                  <th scope="col">Сумма договора</th>
+                  <th scope="col">Контрагент</th>
+                  <th scope="col">Ответственный юрист</th>
                 </tr>
-                ';
-            $show = 1;
-          }
-          echo ' <tr>
-                <td width="30" align="center">';
-          if (isset($_SESSION['id_client']))  echo '<a href="/read.php">';
-          else  echo '<a href="/read.php">';
-          echo '
-            <img src="img/logo2.png" alt="загрузить" width="50" height="50" border="0"/></a></td>
-                <td align="center"><font size=5>' . $row['Номер_договора'] . '</font></td>
-                <td align="left"><font size=5>' . $row['Вид договора'] . '</font></td>
-                <td align="center"><font size=5>' . $row['Сумма_договора'] . '</font></td>
-                <td align="left"><font size=5>' . $row['Контрагент'] . '</font></td>
-                <td align="center"><font size=5>' . $row['ФИО'] . '</font></td>
-            </tr>';
-        }
-        echo "</table>";
-      }
-      ?>
+              </thead>
+              <tbody>
+                <?php
+                $sql = "SELECT `kartochka_dogovora`.`Номер_договора`,`vid_dogovora`.`Вид договора`,`kartochka_dogovora`.`Сумма_договора`, 
+                        `kontragentu`.`Контрагент`,`sotrudniki`.`ФИО`
+                        FROM `vid_dogovora` INNER JOIN (`kontragentu` INNER JOIN (`sotrudniki` INNER JOIN `kartochka_dogovora` 
+                        ON `sotrudniki`.`Табельный номер`=`kartochka_dogovora`.`Ответственный`) 
+                        ON `kontragentu`.`Код`=`kartochka_dogovora`.`Контрагент`) ON `vid_dogovora`.`ID_вида`=`kartochka_dogovora`.`ID_вида` 
+                        ORDER BY `Сумма_договора` ASC LIMIT 5";
+                $q = mysqli_query($db, $sql);
+                if (mysqli_num_rows($q) > 0) :
+                  while ($row = mysqli_fetch_array($q, MYSQLI_ASSOC)) : ?>
+                    <tr>
+                      <td class="text-center">
+                        <a href="/read.php">
+                          <img src="img/logo2.png" alt="загрузить" width="50" height="50">
+                        </a>
+                      </td>
+                      <td class="text-center"><?= $row['Номер_договора'] ?></td>
+                      <td><?= $row['Вид договора'] ?></td>
+                      <td class="text-center"><?= $row['Сумма_договора'] ?></td>
+                      <td><?= $row['Контрагент'] ?></td>
+                      <td class="text-center"><?= $row['ФИО'] ?></td>
+                    </tr>
+                <?php endwhile;
+                endif; ?>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
   <?php
   include("common/bottom.php");
-  ?>
+  ?>  
 
 </body>
 

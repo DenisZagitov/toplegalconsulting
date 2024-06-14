@@ -14,7 +14,7 @@ error_reporting(E_ALL);
   <meta charset="utf-8">
   <title>Юридическая компания «TopLegalConsulting»</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/mystyle.css">
+  <link rel="stylesheet" href="/css/style.css">
   <link href="img/icon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 
