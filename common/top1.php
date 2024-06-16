@@ -12,7 +12,6 @@
                     </p>
                 </span>
             <?php endwhile; ?>
-
         </div>
     </div>
 
@@ -24,11 +23,21 @@
                     <a href='/reg.php?exit=1'>Выход</a>
                 <?php else : ?>
                     <form method="get" action="/reg.php">
-                        Авторизация:
-                        <p>e-mail: <input name="mail" type="text" size="30" maxlength="50" /></p>
-                        <p>пароль: <input name="pas" type="password" size="30" maxlength="20" /> </p>
-                        <p><input class="btn btn-primary" name="enter" type="submit" value="Войти" />
-                        <a href="/reg.php" class="btn btn-secondary">Регистрация</a></p>
+                        <div>
+                            <p>Гость. Авторизация:</p>
+                            <div class="input-group">
+                                <span>e-mail:</span>
+                                <input name="mail" type="text" size="30" maxlength="50" />
+                            </div>
+                            <div class="input-group">
+                                <span>пароль:</span>
+                                <input name="pas" type="password" size="20" maxlength="20" />
+                            </div>
+                            <div class="btn-container">
+                                <input class="btn-new" name="enter" type="submit" value="Войти" />
+                            </div>
+                            <a href="/reg.php">Если у вас еще нет аккаунта, зарегистрируйтесь</a>
+                        </div>
                     </form>
                 <?php endif; ?>
             </strong>
