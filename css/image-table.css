@@ -1,0 +1,50 @@
+/* image-table.css */
+
+.image-table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.image-table img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-table td {
+    padding: 0;
+    border: none;
+}
+
+.image-table img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+}
+
+.image-table img:hover {
+    transform: scale(1.05);
+}
+
+.image-table th {
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+.image-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.image-table-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}

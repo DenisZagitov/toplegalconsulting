@@ -1,111 +1,84 @@
-/* Стили для заголовка */
-.header {
-    background-color: #F0F8FF;
-    text-align: center;
-    padding: 20px;
-}
+/* header.css */
 
-/* Логотип */
-.header .logo img {
-    height: 135px;
-}
-
-/* Стили для телефона */
-.header .phone p {
-    font-size: 24px;
-    font-weight: bold;
-    color: #FFD700;
-    text-align: right;
-}
-
-.header .phone img {
-    width: 50px;
-    height: 50px;
-}
-
-/* Контейнер для заголовка */
-.header .container {
+header {
+    background: #00274d;
+    background-image: url(../img/11111.png);
+    background-size: cover;
+    /* Позволяет изображению покрывать весь блок */
+    background-position: center;
+    /* Центрирует изображение */
+    color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    min-height: 200px;
+    /* Задает минимальную высоту для header */
 }
 
-/* Навигация */
-.navigation {
-    list-style: none;
-    padding: 0;
+.logo-container {
+    flex: 1;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex: 1;
+}
+
+.phone-number img,
+.working-hours img {
+    margin-right: 10px;
+}
+
+.phone-number,
+.working-hours {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.phone-number a,
+.working-hours {
+    color: #fff;
+    text-decoration: none;
+}
+
+.phone-number a:hover,
+.working-hours:hover {
+    color: #f0f0f0;
+}
+
+nav {
+    background-color: #00274d;
+    padding: 10px 0;
+    width: 100%;
+    /* Обеспечивает, что навигация занимает всю ширину */
+    box-sizing: border-box;
+    /* Учитывает padding в ширину элемента */
+}
+
+.nav-links {
     display: flex;
     justify-content: center;
-    background-color: #101f3c;
-    margin: 0;
+    flex-wrap: wrap;
 }
 
-.navigation li {
-    margin: 0 15px;
-}
-
-.navigation li a {
-    font-family: PFDinTextCondPro;
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 18px;
-    font-weight: 500;
-    text-decoration: none;
-    padding: 10px 15px;
-    display: block;
-}
-
-.navigation li a:hover {
-    background: #e42640;
+nav a {
     color: #fff;
-}
-
-/* Название компании */
-.company-name {
-    color: Navy;
-    font-size: 40px;
-    font-weight: bold;
-    margin: 20px 0;
-}
-
-/* Таблица категорий */
-.category-table {
-    width: 100%;
-    margin: 20px 0;
-}
-
-.category-table td {
-    padding: 10px;
-}
-
-/* Форма авторизации */
-.auth-form {
-    margin: 20px 0;
-}
-
-.auth-form input[type="text"],
-.auth-form input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0 15px;
-    border: 2px solid #cacaca;
-    font-size: 24px;
-}
-
-/* Кнопка авторизации */
-.auth-form .btn-new {
-    border: none;
-    border-radius: 10px;
     text-decoration: none;
-    color: white;
-    background: #7B68EE;
-    box-shadow: 0 5px 0 #003CC5;
-    font-size: 22pt;
-    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin: 5px;
 }
 
-.auth-form .btn-new:hover {
-    background: #003CC5;
-    box-shadow: none;
-    position: relative;
-    top: 5px;
+nav a:hover {
+    background-color: #004080;
+    border-radius: 5px;
 }

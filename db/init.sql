@@ -53,7 +53,7 @@ INSERT INTO `clients` (`id_client`, `name`, `mail`, `pas`, `address`, `telefon`,
 CREATE TABLE IF NOT EXISTS `kartochka_dogovora` (
   `Номер_договора` int(11) NOT NULL,
   `ID_вида` int(11) NOT NULL,
-  `Сумма_договора` int(11) NOT NULL,
+  `Сумма договора` int(11) NOT NULL,
   `Контрагент` int(11) NOT NULL,
   `Примечание` varchar(255) NOT NULL,
   `Ответственный` int(11) NOT NULL,
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `kartochka_dogovora` (
 -- Дамп данных таблицы `kartochka_dogovora`
 --
 
-INSERT INTO `kartochka_dogovora` (`Номер_договора`, `ID_вида`, `Сумма_договора`, `Контрагент`, `Примечание`, `Ответственный`) VALUES
+INSERT INTO `kartochka_dogovora` (`Номер_договора`, `ID_вида`, `Сумма договора`, `Контрагент`, `Примечание`, `Ответственный`) VALUES
 (1, 1, 20000, 1, '', 1),
 (2, 2, 30000, 2, '', 2),
 (3, 3, 10000, 3, '', 3),
@@ -113,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `otchet` (
 ,`Статус` varchar(255)
 ,`Дата заключения` date
 ,`Дата окончания` date
-,`Сумма_договора` int(11)
+,`Сумма договора` int(11)
 );
 -- --------------------------------------------------------
 
@@ -221,7 +221,7 @@ INSERT INTO `vid_dogovora` (`ID_вида`, `Вид договора`) VALUES
 --
 DROP TABLE IF EXISTS `otchet`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `otchet` AS select `reestr_dogovorov`.`Номер договора` AS `Номер договора`,`vid_dogovora`.`Вид договора` AS `Вид договора`,`stasus_dogovora`.`Статус` AS `Статус`,`reestr_dogovorov`.`Дата заключения` AS `Дата заключения`,`reestr_dogovorov`.`Дата окончания` AS `Дата окончания`,`kartochka_dogovora`.`Сумма_договора` AS `Сумма_договора` from ((`vid_dogovora` join `kartochka_dogovora` on((`vid_dogovora`.`ID_вида` = `kartochka_dogovora`.`ID_вида`))) join (`stasus_dogovora` join `reestr_dogovorov` on((`stasus_dogovora`.`ID_статуса` = `reestr_dogovorov`.`Статус договора`))) on((`kartochka_dogovora`.`Номер_договора` = `reestr_dogovorov`.`Номер договора`))) group by `reestr_dogovorov`.`Номер договора`,`vid_dogovora`.`Вид договора`,`stasus_dogovora`.`Статус`,`reestr_dogovorov`.`Дата заключения`,`reestr_dogovorov`.`Дата окончания`,`kartochka_dogovora`.`Сумма_договора`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `otchet` AS select `reestr_dogovorov`.`Номер договора` AS `Номер договора`,`vid_dogovora`.`Вид договора` AS `Вид договора`,`stasus_dogovora`.`Статус` AS `Статус`,`reestr_dogovorov`.`Дата заключения` AS `Дата заключения`,`reestr_dogovorov`.`Дата окончания` AS `Дата окончания`,`kartochka_dogovora`.`Сумма договора` AS `Сумма договора` from ((`vid_dogovora` join `kartochka_dogovora` on((`vid_dogovora`.`ID_вида` = `kartochka_dogovora`.`ID_вида`))) join (`stasus_dogovora` join `reestr_dogovorov` on((`stasus_dogovora`.`ID_статуса` = `reestr_dogovorov`.`Статус договора`))) on((`kartochka_dogovora`.`Номер_договора` = `reestr_dogovorov`.`Номер договора`))) group by `reestr_dogovorov`.`Номер договора`,`vid_dogovora`.`Вид договора`,`stasus_dogovora`.`Статус`,`reestr_dogovorov`.`Дата заключения`,`reestr_dogovorov`.`Дата окончания`,`kartochka_dogovora`.`Сумма договора`;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц

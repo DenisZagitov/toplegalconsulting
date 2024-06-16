@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 function bd_connect()
 {
     global $db;
