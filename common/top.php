@@ -1,4 +1,4 @@
-﻿<div class="header-container">
+<div class="header-container">
     <header>
         <div class="logo-container">
             <a href="#" class="logo"><img src="img/hotpng.png" alt="Лого"></a>
@@ -7,11 +7,11 @@
             <div class="phone-info">
                 <p class="phone-number">
                     <img src="img/call.png" width="50" height="50">
-                    +7 (3452) 500-045
+                <a href="tel:+73452500045">+7 (3452) 500-045</a>
                 </p>
                 <p class="working-hours">
                     <img src="img/time.png" width="50" height="50">
-                    9.00 - 20.00
+                    09:00 - 20:00
                 </p>
             </div>
         </div>
@@ -24,7 +24,7 @@
             <a class="nav-link" href="/aboutdogovor.php">Услуги</a>
             <a class="nav-link" href="/otchet.php">Договора</a>
             <a class="nav-link" href="/read.php">Помощь</a>
-            <a class="nav-link" href="news.php">Новости</a>
+            <a class="nav-link" href="/news.php">Новости</a>
             <a class="nav-link" href="/contacts.php">Контакты</a>
         </div>
     </nav>

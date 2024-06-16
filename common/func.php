@@ -1,5 +1,6 @@
-﻿<?php
-function bd_connect(){
+<?php
+function bd_connect()
+{
     global $db;
     $db = new mysqli("db", "user", "password", "toplegalconsulting");
 
@@ -9,4 +10,3 @@ function bd_connect(){
         exit();
     }
 }
-?>

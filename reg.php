@@ -34,7 +34,7 @@ if (isset($_GET['enter'])) {
         header("Location: /reg.php");
         exit();
     } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($db);
+        echo "Error: " . $sql . "" . mysqli_error($db);
     }
 } elseif (isset($_GET['exit'])) {
     unset($_SESSION['id_client']);
@@ -49,24 +49,25 @@ if (isset($_GET['enter'])) {
 <head>
     <meta charset="utf-8">
     <title>Юридическая компания «TopLegalConsulting»</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-    <link href="img/icon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/form.css">
+    <link href="/img/fav-tlc.png" rel="shortcut icon" type="image/x-icon">
 </head>
 
 <body class="body">
     <?php include("common/top.php"); ?>
     <div class="main-content">
         <?php include("common/top1.php"); ?>
-        <div class="container">
-            <?php if (isset($_SESSION['success_message'])): ?>
-                <div class="alert alert-success">
+        <div class="page-content">
+            <?php if (isset($_SESSION['success_message'])) : ?>
+                <div class="success-message">
                     <?= $_SESSION['success_message']; ?>
                     <?php unset($_SESSION['success_message']); ?>
                 </div>
             <?php endif; ?>
             <form method="post" action="">
-                <strong class="section-title">Регистрация </strong><br>
+                <h3>Регистрация </h3>
                 <div class="form-group">
                     <label class="form-label" for="name">Фамилия И.О.*</label>
                     <input class="form-control" id="name" name="name" type="text" value="">
@@ -91,8 +92,12 @@ if (isset($_GET['enter'])) {
                     <label class="form-label" for="comment">Комментарии</label>
                     <textarea class="form-control" id="comment" name="comment" style="height:70px"></textarea>
                 </div>
-                <i class="form-text">Поля отмеченные символом * обязательны для заполнения</i>
-                <input class="btn btn-primary" name="reg" type="submit" value="Регистрация">
+                <div>
+                    <i class="form-text">Поля отмеченные символом * обязательны для заполнения</i>
+                </div>
+                <div class="btn-container">
+                    <input class="btn-new" name="reg" type="submit" value="Регистрация">
+                </div>
             </form>
         </div>
     </div>

@@ -7,39 +7,41 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL ^ E_NOTICE);
 error_reporting(E_ALL);
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 
 <head>
   <meta charset="utf-8">
   <title>Юридическая компания «TopLegalConsulting»</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/style.css">
-  <link href="img/icon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/form.css">
+  <link href="/img/fav-tlc.png" rel="shortcut icon" type="image/x-icon">
 </head>
 
 <body class="body">
-  <?
-  include("common/top.php");
-  ?>
+  <?php include("common/top.php"); ?>
   <div class="main-content">
-    <?php
-    include("common/top1.php");
-    ?>
-    <div class="container">
-      <center>
-        <br><br><br>
+    <?php include("common/top1.php"); ?>
+    <div class="page-content">
+      <div class="contact">
+        <h3>Контакты</h3>
         <p>
-          <span class="style5"><strong class="style8">Адрес:</strong>
-            <br> <br>РФ, г. Тюмень, ул.Водопроводная, дом 6 (угол с улицей Комсомольской)
-            <br> <br><strong class="style8">Телефон:</strong> +7 (3452) 500-045
-            <br><br><strong class="style8">E-mail:</strong> mail@toplegalconsult.com
+          <span class="contact-details">
+            <p><strong>Адрес:</strong>
+              РФ, г. Тюмень, ул.Водопроводная, дом 6 (угол с улицей Комсомольской)</p>
+            <p><strong>Телефон:</strong>
+              <a href="tel:+73452500045">+7 (3452) 500-045</a>
+            </p>
+            <p><strong>E-mail:</strong>
+              <a href="mailto:mail@toplegalconsult.com">mail@toplegalconsult.com</a>
+            </p>
           </span>
         </p>
-      </center>
+      </div>
     </div>
   </div>
+  <?php include("common/bottom.php"); ?>
 </body>
 
 </html>
-</p>
-<?php include("common/bottom.php"); ?>

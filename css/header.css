@@ -1,0 +1,84 @@
+/* header.css */
+
+header {
+    background: #00274d;
+    background-image: url(../img/11111.png);
+    background-size: cover;
+    /* Позволяет изображению покрывать весь блок */
+    background-position: center;
+    /* Центрирует изображение */
+    color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 200px;
+    /* Задает минимальную высоту для header */
+}
+
+.logo-container {
+    flex: 1;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex: 1;
+}
+
+.phone-number img,
+.working-hours img {
+    margin-right: 10px;
+}
+
+.phone-number,
+.working-hours {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.phone-number a,
+.working-hours {
+    color: #fff;
+    text-decoration: none;
+}
+
+.phone-number a:hover,
+.working-hours:hover {
+    color: #f0f0f0;
+}
+
+nav {
+    background-color: #00274d;
+    padding: 10px 0;
+    width: 100%;
+    /* Обеспечивает, что навигация занимает всю ширину */
+    box-sizing: border-box;
+    /* Учитывает padding в ширину элемента */
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+}
+
+nav a:hover {
+    background-color: #004080;
+    border-radius: 5px;
+}
