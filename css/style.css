@@ -9,25 +9,22 @@ body {
 
 header {
     background: #00274d;
-    /* Более глубокий темно-синий */
     color: #fff;
     padding: 10px 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
 }
 
 .logo-container {
     flex: 1;
-    /* Это позволит логотипу занимать все доступное пространство слева */
 }
 
 .contact-info {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    /* Это выровняет контактную информацию по правому краю */
     flex: 1;
 }
-
 
 .phone-number img,
 .working-hours img {
@@ -46,19 +43,23 @@ header {
     display: flex;
     padding: 20px;
     width: 100%;
-    /* Занимает всю ширину */
     max-width: 1200px;
-    /* Ограничение ширины */
     margin: 0 auto;
-    /* Центрирование */
 }
 
-.main-nav {
+nav {
     background-color: #00274d;
     padding: 10px 0;
+
 }
 
-.main-nav a {
+.nav-links {
+    display: flex;
+    justify-content: center;
+
+}
+
+nav a {
     color: #fff;
     text-decoration: none;
     padding: 10px 20px;
@@ -67,7 +68,7 @@ header {
     transition: background-color 0.3s ease;
 }
 
-.main-nav a:hover {
+nav a:hover {
     background-color: #004080;
     border-radius: 5px;
 }
@@ -136,10 +137,8 @@ td a img:hover {
 
 .table-primary {
     background-color: #cce0ff;
-    /* Легкий синий оттенок */
 }
 
-/* Дополнительные стили для кнопок */
 button,
 .btn {
     background-color: #004080;
@@ -158,7 +157,6 @@ button:hover,
     background-color: #0059b3;
 }
 
-/* Стили для ссылок */
 a {
     color: #004080;
     text-decoration: none;
@@ -169,7 +167,6 @@ a:hover {
     color: #0059b3;
 }
 
-/* Стили для заголовков */
 h1,
 h2,
 h3,
@@ -178,52 +175,9 @@ h5,
 h6 {
     font-family: 'Georgia', serif;
     color: #00274d;
-}
-
-/* Стили для таблиц */
-table {
-    margin-top: 20px;
-    width: 100%;
-    border-collapse: collapse;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-thead th {
-    background-color: #004080;
-    color: white;
     text-align: center;
-    padding: 10px;
-    border-bottom: 2px solid #ddd;
 }
 
-tbody td {
-    padding: 10px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-}
-
-tbody tr:hover {
-    background-color: #f1f1f1;
-}
-
-/* Стили для ячеек таблицы */
-td img {
-    max-width: 50px;
-    max-height: 50px;
-    margin: auto;
-    display: block;
-}
-
-td {
-    vertical-align: middle;
-}
-
-thead th,
-tbody td {
-    padding: 12px;
-}
-
-/* Стили для footer */
 .footer {
     background-color: #00274d;
     color: #fff;
@@ -339,4 +293,53 @@ body {
 
 #auth-section a {
     font-size: 13px;
+}
+
+.image-table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.image-table img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-table td {
+    padding: 0;
+    border: none;
+}
+
+.image-table img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+}
+
+.image-table img:hover {
+    transform: scale(1.05);
+}
+
+.image-table th {
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+.image-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.image-table-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }

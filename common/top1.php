@@ -1,6 +1,6 @@
-<div class="content-container container">
+<div class="left-side">
     <div id="contracts-section">
-        <strong class="section-title">Категории договоров:<br></strong>
+        <h3>Категории договоров:</h3>
         <div class="Category">
             <?php
             $sql = "SELECT * FROM `vid_dogovora` WHERE 1";
@@ -16,31 +16,27 @@
     </div>
 
     <div class="auth-container">
-        <div id="auth-section">
-            <strong class="auth-title">
-                <?php if (isset($_SESSION['name_client'])) : ?>
-                    Здравствуйте, <?= $_SESSION['name_client'] ?>! <br>
-                    <a href='/reg.php?exit=1'>Выход</a>
-                <?php else : ?>
-                    <form method="get" action="/reg.php">
-                        <div>
-                            <p>Гость. Авторизация:</p>
-                            <div class="input-group">
-                                <span>e-mail:</span>
-                                <input name="mail" type="text" size="30" maxlength="50" />
-                            </div>
-                            <div class="input-group">
-                                <span>пароль:</span>
-                                <input name="pas" type="password" size="20" maxlength="20" />
-                            </div>
-                            <div class="btn-container">
-                                <input class="btn-new" name="enter" type="submit" value="Войти" />
-                            </div>
-                            <a href="/reg.php">Если у вас еще нет аккаунта, зарегистрируйтесь</a>
-                        </div>
-                    </form>
-                <?php endif; ?>
-            </strong>
-        </div>
+        <?php if (isset($_SESSION['name_client'])) : ?>
+            Здравствуйте, <?= $_SESSION['name_client'] ?>! <br>
+            <a href='/reg.php?exit=1'>Выход</a>
+        <?php else : ?>
+            <form method="get" action="/reg.php">
+                <div>
+                    <h3>Вход</h3>
+                    <div class="input-group">
+                        <span>E-mail:</span>
+                        <input name="mail" type="text" size="30" maxlength="50" />
+                    </div>
+                    <div class="input-group">
+                        <span>Пароль:</span>
+                        <input name="pas" type="password" size="20" maxlength="20" />
+                    </div>
+                    <div class="btn-container">
+                        <input class="btn-new" name="enter" type="submit" value="Войти" />
+                        <a href="/reg.php">Регистрация</a>
+                    </div>
+                </div>
+            </form>
+        <?php endif; ?>
     </div>
 </div>

@@ -30,77 +30,50 @@ error_reporting(E_ALL);
     <?php
     include("common/top1.php");
     ?>
+    <div class="page-content">
 
-    <div class="container">
-      <?php
-
-      if (isset($_GET['vid'])) {
-        $vid = "catalog";
-        $zag = "Наши договора";
-        $sql = "SELECT `kartochka_dogovora`.`Номер_договора`,`vid_dogovora`.`Вид договора`,`kartochka_dogovora`.`Сумма_договора`, 
-                `kontragentu`.`Контрагент`,`sotrudniki`.`ФИО`
-                FROM `vid_dogovora` INNER JOIN (`kontragentu` INNER JOIN (`sotrudniki` INNER JOIN `kartochka_dogovora` 
-                ON `sotrudniki`.`Табельный номер`=`kartochka_dogovora`.`Ответственный`) 
-                ON `kontragentu`.`Код`=`kartochka_dogovora`.`Контрагент`) ON `vid_dogovora`.`ID_вида`=`kartochka_dogovora`.`ID_вида` AND `kartochka_dogovora`.`ID_вида`=" . $_GET['type'] . " 
-                    ";
-        if (isset($_GET['sort']))
-          if ($_GET['sort'] == 'Номер_договора') $sql .= " ORDER BY `Номер_договора` ASC";
-          else $sql .= " ORDER BY `Сумма_договора` ASC";
-      } else {
-        $vid = 'popular';
-        $zag = 'Самые популярные';
-        $sql = "SELECT `kartochka_dogovora`.`Номер_договора`,`vid_dogovora`.`Вид договора`,`kartochka_dogovora`.`Сумма_договора`, `kontragentu`.`Контрагент`,`sotrudniki`.`ФИО`
-                FROM `vid_dogovora` INNER JOIN (`kontragentu` INNER JOIN (`sotrudniki` INNER JOIN `kartochka_dogovora` 
-                ON `sotrudniki`.`Табельный номер`=`kartochka_dogovora`.`Ответственный`) 
-                ON `kontragentu`.`Код`=`kartochka_dogovora`.`Контрагент`) ON `vid_dogovora`.`ID_вида`=`kartochka_dogovora`.`ID_вида` ORDER BY `Сумма_договора` ASC LIMIT 5";
-      }
-      ?>
-      <strong>
-        <?= $zag; ?></strong><br />
-      <?php
-      $color = "red";
-      $q = mysqli_query($db, $sql);
-      if (mysqli_num_rows($q) > 0) {
-        echo ' <table width="100%" border="2" cellspacing="2" cellpadding="2">
-        <tr>
-            <td width="50" bgcolor=#F0F8FF>&nbsp;</td>
-            <td width="60" align="center" bgcolor=#F0F8FF><b><font size=5>';
-        if ($vid == 'catalog') echo  '<a href="/?vid=catalog&type=' . $_GET['type'] . '&sort=Номер_договора">Номер_договора </font></a>';
-        else echo 'Номер_договора</font></b>';
-        echo '</td>
-            <td width="300" align="center" bgcolor=#F0F8FF><b><font size=5>Вид договора</font></b></td>
-            <td  width="100" align="center" bgcolor=#F0F8FF><b><font size=5>Сумма договора</font></b></td>
-            <td width="120" align="center" bgcolor=#F0F8FF><b><font size=5>Контрагент</font></b></td>
-            <td width="120" align="center" bgcolor=#F0F8FF><b><font size=5>Ответственный юрист</font></b></td>
-        </tr>';
-        $show = 0;
-
-        while ($row = mysqli_fetch_array($q, MYSQLI_ASSOC)) {
-          if ($vid == 'catalog' and $show == 0) {
-            echo '
-                <tr class="style2">
-                <td colspan="8" align="center"><strong>' . $row['Вид договора'] . '</strong></td>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Номер договора</th>
+              <th scope="col">Вид договора</th>
+              <th scope="col">Сумма договора</th>
+              <th scope="col">Контрагент</th>
+              <th scope="col">Ответственный юрист</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+            $sql = "SELECT `kartochka_dogovora`.`Номер_договора`,`vid_dogovora`.`Вид договора`,`kartochka_dogovora`.`Сумма_договора`, 
+                        `kontragentu`.`Контрагент`,`sotrudniki`.`ФИО`
+                        FROM `vid_dogovora` INNER JOIN (`kontragentu` INNER JOIN (`sotrudniki` INNER JOIN `kartochka_dogovora` 
+                        ON `sotrudniki`.`Табельный номер`=`kartochka_dogovora`.`Ответственный`) 
+                        ON `kontragentu`.`Код`=`kartochka_dogovora`.`Контрагент`) ON `vid_dogovora`.`ID_вида`=`kartochka_dogovora`.`ID_вида` 
+                        ORDER BY `Сумма_договора` ASC LIMIT 5";
+            $q = mysqli_query($db, $sql);
+            if (mysqli_num_rows($q) > 0) :
+              while ($row = mysqli_fetch_array($q, MYSQLI_ASSOC)) : ?>
+                <tr>
+                  <td class="text-center">
+                    <a href="/read.php">
+                      <img src="img/logo2.png" alt="загрузить" width="50" height="50">
+                    </a>
+                  </td>
+                  <td class="text-center"><?= $row['Номер_договора'] ?></td>
+                  <td><?= $row['Вид договора'] ?></td>
+                  <td class="text-center"><?= $row['Сумма_договора'] ?></td>
+                  <td><?= $row['Контрагент'] ?></td>
+                  <td class="text-center"><?= $row['ФИО'] ?></td>
                 </tr>
-                ';
-            $show = 1;
-          }
-          echo ' <tr>
-                <td width="30" align="center">';
-          if (isset($_SESSION['id_client']))  echo '<a href="/read.php">';
-          else  echo '<a href="/read.php">';
-          echo '
-            <img src="img/logo2.png" alt="загрузить" width="50" height="50" border="0"/></a></td>
-                <td align="center"><font size=5>' . $row['Номер_договора'] . '</font></td>
-                <td align="left"><font size=5>' . $row['Вид договора'] . '</font></td>
-                <td align="center"><font size=5>' . $row['Сумма_договора'] . '</font></td>
-                <td align="left"><font size=5>' . $row['Контрагент'] . '</font></td>
-                <td align="center"><font size=5>' . $row['ФИО'] . '</font></td>
-            </tr>';
-        }
-        echo "</table>";
-      }
-      ?>
+            <?php endwhile;
+            endif; ?>
+          </tbody>
+        </table>
+      </div>
     </div>
+
   </div>
   <?php
   include("common/bottom.php");
