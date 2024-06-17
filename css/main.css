@@ -81,5 +81,30 @@ a:hover {
 
 .doc-image-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.doc-item {
+    text-align: center;
+    max-width: 250px;
+}
+
+.doc-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+}
+
+.doc-item img:hover {
+    transform: scale(1.05);
+}
+
+.doc-item p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
 }

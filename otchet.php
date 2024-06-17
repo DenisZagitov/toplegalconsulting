@@ -35,41 +35,38 @@ $type = isset($_GET['type']) ? mysqli_real_escape_string($db, $_GET['type']) : '
       }
       $q = mysqli_query($db, $sql);
       ?>
-      <?php if (mysqli_num_rows($q) > 0) : ?>
-        <table>
-          <thead>
-            <tr>
-              <th>Номер договора</th>
-              <th>Вид договора</th>
-              <th>Статус</th>
-              <th>Дата заключения</th>
-              <th>Дата окончания</th>
-              <th>Сумма договора</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php while ($row = mysqli_fetch_assoc($q)) : ?>
+      <div>
+        <?php if (mysqli_num_rows($q) > 0) : ?>
+          <table>
+            <thead>
               <tr>
-                <td><?= isset($row['Номер договора']) ? htmlspecialchars($row['Номер договора']) : '' ?></td>
-                <td><?= isset($row['Вид договора']) ? htmlspecialchars($row['Вид договора']) : '' ?></td>
-                <td><?= isset($row['Статус']) ? htmlspecialchars($row['Статус']) : '' ?></td>
-                <td><?= isset($row['Дата заключения']) ? htmlspecialchars($row['Дата заключения']) : '' ?></td>
-                <td><?= isset($row['Дата окончания']) ? htmlspecialchars($row['Дата окончания']) : '' ?></td>
-                <td><?= isset($row['Сумма договора']) ? htmlspecialchars($row['Сумма договора']) : '' ?></td>
+                <th>Номер договора</th>
+                <th>Вид договора</th>
+                <th>Статус</th>
+                <th>Дата заключения</th>
+                <th>Дата окончания</th>
+                <th>Сумма договора</th>
               </tr>
-            <?php endwhile; ?>
-          </tbody>
-        </table>
-      <?php else : ?>
-        <p>Нет данных для отображения.</p>
-      <?php endif; ?>
-
-      <div class="print-section">
-        <button onclick="window.print();" class="btn-new">Печать</button>
+            </thead>
+            <tbody>
+              <?php while ($row = mysqli_fetch_assoc($q)) : ?>
+                <tr>
+                  <td><?= isset($row['Номер договора']) ? htmlspecialchars($row['Номер договора']) : '' ?></td>
+                  <td><?= isset($row['Вид договора']) ? htmlspecialchars($row['Вид договора']) : '' ?></td>
+                  <td><?= isset($row['Статус']) ? htmlspecialchars($row['Статус']) : '' ?></td>
+                  <td><?= isset($row['Дата заключения']) ? htmlspecialchars($row['Дата заключения']) : '' ?></td>
+                  <td><?= isset($row['Дата окончания']) ? htmlspecialchars($row['Дата окончания']) : '' ?></td>
+                  <td><?= isset($row['Сумма договора']) ? htmlspecialchars($row['Сумма договора']) : '' ?></td>
+                </tr>
+              <?php endwhile; ?>
+            </tbody>
+          </table>
+        <?php else : ?>
+          <p>Нет данных для отображения.</p>
+        <?php endif; ?>
       </div>
-
-      <div class="home-section">
-        <a href="/"><button class="btn-new">На Главную</button></a>
+      <div class="btn-container">
+        <button onclick="window.print();" class="btn-new">Печать</button>
       </div>
     </div>
   </div>
