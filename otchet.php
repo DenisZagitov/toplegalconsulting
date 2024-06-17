@@ -6,6 +6,8 @@ bd_connect();
 ini_set('display_errors', 1);
 error_reporting(E_ALL ^ E_NOTICE);
 error_reporting(E_ALL);
+// Получение параметра type из URL
+$type = isset($_GET['type']) ? mysqli_real_escape_string($db, $_GET['type']) : '';
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -28,6 +30,9 @@ error_reporting(E_ALL);
       <h3>Наши договора</h3>
       <?php
       $sql = "SELECT * FROM otchet";
+      if (!empty($type)) {
+        $sql .= " WHERE `Вид договора` = '$type'";
+      }
       $q = mysqli_query($db, $sql);
       ?>
       <?php if (mysqli_num_rows($q) > 0) : ?>

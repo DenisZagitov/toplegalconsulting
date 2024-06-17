@@ -8,8 +8,7 @@
             while ($row_types = mysqli_fetch_array($q_types, MYSQLI_NUM)) : ?>
                 <span class="contract-category">
                     <p>
-                        <!-- TODO: обработать ссылки -->
-                        <a href="/?vid=catalog&type=<?= $row_types[0] ?>"><?= $row_types[1] ?></a>
+                        <a href="/otchet.php?type=<?= urlencode($row_types[1]) ?>"><?= htmlspecialchars($row_types[1]) ?></a>
                     </p>
                 </span>
             <?php endwhile; ?>
@@ -18,7 +17,7 @@
 
     <div class="auth-container">
         <?php if (isset($_SESSION['name_client'])) : ?>
-            Здравствуйте, <?= $_SESSION['name_client'] ?>! 
+            Здравствуйте, <?= $_SESSION['name_client'] ?>!
             <a href='/reg.php?exit=1'>Выход</a>
         <?php else : ?>
             <form method="get" action="/reg.php">
