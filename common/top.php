@@ -1,16 +1,16 @@
 <div class="header-container">
     <header>
         <div class="logo-container">
-            <a href="#" class="logo"><img src="img/hotpng.png" alt="Лого"></a>
+            <a href="#" class="logo"><img src="/img/hotpng.png" alt="Лого"></a>
         </div>
         <div class="contact-info">
             <div class="phone-info">
                 <p class="phone-number">
-                    <img src="img/call.png" width="50" height="50">
+                    <img src="/img/call.png" width="50" height="50">
                 <a href="tel:+73452500045">+7 (3452) 500-045</a>
                 </p>
                 <p class="working-hours">
-                    <img src="img/time.png" width="50" height="50">
+                    <img src="/img/time.png" width="50" height="50">
                     09:00 - 20:00
                 </p>
             </div>

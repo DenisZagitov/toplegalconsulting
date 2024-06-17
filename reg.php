@@ -1,4 +1,5 @@
 <?php
+// Страница регистрации клиента
 ob_start(); // Включаем буферизацию вывода
 session_start();
 include("common/func.php");

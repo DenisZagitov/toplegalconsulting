@@ -2,20 +2,12 @@
 
 .image-table {
     margin: 0 auto;
-    border-collapse: collapse;
+    border-collapse: separate;
+    /* Изменяем значение для border-collapse */
+    border-spacing: 10px;
+    /* Устанавливаем расстояние между ячейками */
     width: 100%;
     max-width: 1000px;
-}
-
-.image-table img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.image-table td {
-    padding: 0;
-    border: none;
 }
 
 .image-table img {
@@ -28,6 +20,11 @@
 
 .image-table img:hover {
     transform: scale(1.05);
+}
+
+.image-table td {
+    padding: 0;
+    border: none;
 }
 
 .image-table th {

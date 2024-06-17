@@ -1,4 +1,5 @@
 <?php
+//Главная страница сайта. Содержит процедуры и функции, которые необходимо выполнить для работы с остальными страницами сайта.
 session_start();
 include("common/func.php");
 bd_connect();
@@ -52,7 +53,7 @@ error_reporting(E_ALL);
                 <tr>
                   <td>
                     <a href="/read.php">
-                      <img src="img/logo2.png" alt="Загрузить" width="50" height="50">
+                      <img src="/img/logo2.png" alt="Загрузить" width="50" height="50">
                     </a>
                   </td>
                   <td><?= $row['Номер_договора'] ?></td>

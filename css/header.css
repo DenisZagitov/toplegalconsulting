@@ -2,7 +2,7 @@
 
 header {
     background: #00274d;
-    background-image: url(../img/11111.png);
+    background-image: url(../img/banner.png);
     background-size: cover;
     /* Позволяет изображению покрывать весь блок */
     background-position: center;
@@ -55,7 +55,6 @@ header {
 
 nav {
     background-color: #00274d;
-    padding: 10px 0;
     width: 100%;
     /* Обеспечивает, что навигация занимает всю ширину */
     box-sizing: border-box;
