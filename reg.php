@@ -10,25 +10,25 @@ error_reporting(E_ALL);
 
 // Обработка логики до вывода HTML
 if (isset($_GET['enter'])) {
-    $mail = mysqli_real_escape_string($db, $_GET['mail']);
-    $pas = mysqli_real_escape_string($db, $_GET['pas']);
-    $q_guest = mysqli_query($db, "SELECT `id_client`,`name` FROM `clients` WHERE `mail`='$mail' AND `pas`='$pas' limit 1");
+    $email = mysqli_real_escape_string($db, $_GET['email']);
+    $password = mysqli_real_escape_string($db, $_GET['current-password']);
+    $q_guest = mysqli_query($db, "SELECT `client_id`,`name` FROM `client` WHERE `email`='$email' AND `password`='$password' limit 1");
     if (mysqli_num_rows($q_guest) == 1) {
         $row_q_guest = mysqli_fetch_array($q_guest, MYSQLI_NUM);
-        $_SESSION['id_client'] = $row_q_guest[0];
+        $_SESSION['client_id'] = $row_q_guest[0];
         $_SESSION['name_client'] = $row_q_guest[1];
     }
     header("Location: /");
     exit();
-} elseif (isset($_POST['reg']) and $_POST['name'] != '' and $_POST['mail'] != '' and $_POST['pas'] != '' and $_POST['address'] != '' and $_POST['telefon'] != '') {
+} elseif (isset($_POST['reg']) and $_POST['name'] != '' and $_POST['email'] != '' and $_POST['password'] != '' and $_POST['address'] != '' and $_POST['phone'] != '') {
     $name = mysqli_real_escape_string($db, $_POST['name']);
-    $mail = mysqli_real_escape_string($db, $_POST['mail']);
-    $pas = mysqli_real_escape_string($db, $_POST['pas']);
+    $email = mysqli_real_escape_string($db, $_POST['email']);
+    $password = mysqli_real_escape_string($db, $_POST['password']);
     $address = mysqli_real_escape_string($db, $_POST['address']);
-    $telefon = mysqli_real_escape_string($db, $_POST['telefon']);
+    $phone = mysqli_real_escape_string($db, $_POST['phone']);
     $comment = mysqli_real_escape_string($db, $_POST['comment']);
 
-    $sql = "INSERT INTO `clients` (`name`, `mail`, `pas`, `address`, `telefon`, `comment`) VALUES ('$name', '$mail', '$pas', '$address', '$telefon', '$comment')";
+    $sql = "INSERT INTO `client` (`name`, `email`, `password`, `address`, `phone`, `comment`) VALUES ('$name', '$email', '$password', '$address', '$phone', '$comment')";
 
     if (mysqli_query($db, $sql)) {
         $_SESSION['success_message'] = "Регистрация прошла успешно!";
@@ -38,7 +38,7 @@ if (isset($_GET['enter'])) {
         echo "Error: " . $sql . "" . mysqli_error($db);
     }
 } elseif (isset($_GET['exit'])) {
-    unset($_SESSION['id_client']);
+    unset($_SESSION['client_id']);
     unset($_SESSION['name_client']);
     header("Location: /");
     exit();
@@ -74,20 +74,20 @@ if (isset($_GET['enter'])) {
                     <input class="form-control" id="name" name="name" type="text" value="">
                 </div>
                 <div class="form-group">
-                    <label class="form-label" for="mail">Контактный e-mail*</label>
-                    <input class="form-control" id="mail" name="mail" type="text" value="">
+                    <label class="form-label" for="email">Контактный e-mail*</label>
+                    <input class="form-control" id="email" name="email" type="text" value="">
                 </div>
                 <div class="form-group">
-                    <label class="form-label" for="pas">Пароль для входа на сайт*</label>
-                    <input class="form-control" id="pas" name="pas" type="password" size="20" maxlength="20">
+                    <label class="form-label" for="password">Пароль для входа на сайт*</label>
+                    <input class="form-control" id="password" name="password" type="new-password" size="20" maxlength="20">
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="address">Адрес*</label>
                     <input class="form-control" id="address" name="address" value="">
                 </div>
                 <div class="form-group">
-                    <label class="form-label" for="telefon">Контактный телефон*</label>
-                    <input class="form-control" id="telefon" name="telefon" type="text">
+                    <label class="form-label" for="phone">Контактный телефон*</label>
+                    <input class="form-control" id="phone" name="phone" type="text">
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="comment">Комментарии</label>

@@ -2,14 +2,20 @@ version: '3.8'
 
 services:
   db:
-    image: mysql:8.0
+    image: mysql
     container_name: toplegalconsulting-db
     restart: always
+    ports:
+      - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: toplegalconsulting
       MYSQL_USER: user
       MYSQL_PASSWORD: password
+    command: [
+      '--character-set-server=utf8',
+      '--collation-server=utf8_general_ci'
+    ]
     volumes:
       - db_data:/var/lib/mysql
       - ./db:/docker-entrypoint-initdb.d
@@ -30,7 +36,7 @@ services:
       - toplegalconsulting-network
 
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin
+    image: phpmyadmin
     container_name: toplegalconsulting-phpmyadmin
     restart: always
     ports:

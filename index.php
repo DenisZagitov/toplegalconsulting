@@ -41,12 +41,7 @@ error_reporting(E_ALL);
           </thead>
           <tbody>
             <?php
-            $sql = "SELECT `kartochka_dogovora`.`Номер_договора`,`vid_dogovora`.`Вид договора`,`kartochka_dogovora`.`Сумма договора`, 
-                        `kontragentu`.`Контрагент`,`sotrudniki`.`ФИО`
-                        FROM `vid_dogovora` INNER JOIN (`kontragentu` INNER JOIN (`sotrudniki` INNER JOIN `kartochka_dogovora` 
-                        ON `sotrudniki`.`Табельный номер`=`kartochka_dogovora`.`Ответственный`) 
-                        ON `kontragentu`.`Код`=`kartochka_dogovora`.`Контрагент`) ON `vid_dogovora`.`ID_вида`=`kartochka_dogovora`.`ID_вида` 
-                        ORDER BY `Сумма договора` ASC LIMIT 5";
+            $sql = "SELECT * FROM report";
             $q = mysqli_query($db, $sql);
             if (mysqli_num_rows($q) > 0) :
               while ($row = mysqli_fetch_array($q, MYSQLI_ASSOC)) : ?>
@@ -56,11 +51,11 @@ error_reporting(E_ALL);
                       <img src="/img/logo2.png" alt="Загрузить" width="50" height="50">
                     </a>
                   </td>
-                  <td><?= $row['Номер_договора'] ?></td>
+                  <td><?= $row['Номер договора'] ?></td>
                   <td><?= $row['Вид договора'] ?></td>
                   <td><?= $row['Сумма договора'] ?></td>
                   <td><?= $row['Контрагент'] ?></td>
-                  <td><?= $row['ФИО'] ?></td>
+                  <td><?= $row['Ответственный юрист'] ?></td>
                 </tr>
             <?php endwhile;
             endif; ?>

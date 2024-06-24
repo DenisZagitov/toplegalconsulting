@@ -27,9 +27,9 @@ $type = isset($_GET['type']) ? mysqli_real_escape_string($db, $_GET['type']) : '
   <div class="main-content">
     <?php include("common/top1.php"); ?>
     <div class="page-content">
-      <h3>Наши договора</h3>
+      <h3>Наши договоры</h3>
       <?php
-      $sql = "SELECT * FROM otchet";
+      $sql = "SELECT * FROM report";
       if (!empty($type)) {
         $sql .= " WHERE `Вид договора` = '$type'";
       }
@@ -67,6 +67,9 @@ $type = isset($_GET['type']) ? mysqli_real_escape_string($db, $_GET['type']) : '
       </div>
       <div class="btn-container">
         <button onclick="window.print();" class="btn-new">Печать</button>
+        <a href="/">
+          <button class="btn-new">На Главную</button>
+        </a>
       </div>
     </div>
   </div>

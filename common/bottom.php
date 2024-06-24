@@ -1,3 +1,3 @@
-<footer class="footer">
+<footer>
         <p>Удачного сотрудничества!</p>
 </footer>
