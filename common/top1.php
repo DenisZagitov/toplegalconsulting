@@ -8,7 +8,7 @@
             while ($row_types = mysqli_fetch_array($q_types, MYSQLI_NUM)) : ?>
                 <span class="contract-category">
                     <p>
-                        <a href="/otchet.php?type=<?= urlencode($row_types[1]) ?>"><?= htmlspecialchars($row_types[1]) ?></a>
+                        <a href="/index.php?type=<?= urlencode($row_types[1]) ?>"><?= htmlspecialchars($row_types[1]) ?></a>
                     </p>
                 </span>
             <?php endwhile; ?>

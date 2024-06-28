@@ -6,6 +6,9 @@ bd_connect();
 ini_set('display_errors', 1);
 error_reporting(E_ALL ^ E_NOTICE);
 error_reporting(E_ALL);
+// Извлечение сотрудников из базы данных
+$query = "SELECT name, degree, position FROM employee;";
+$result = mysqli_query($db, $query);
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -24,15 +27,35 @@ error_reporting(E_ALL);
   <div class="main-content">
     <?php include("common/top1.php"); ?>
     <div class="page-content">
-      <h3>Главное правило делового мира: читай все, включая напечатанное мелким шрифтом.</h3>
-      <span class="paragraph-text">
-        <p>Юридическая компания ООО «TopLegalConsulting» предоставляет услуги комплексного юридического сопровождения по корпоративным и коммерческим вопросам в различных отраслях деятельности клиентов.</p>
-        <p>Также компания разрабатывает и обеспечивает клиентов всеми необходимыми видами и формами внутренних и иных документов.</p>
-        <p>Компания представляет интересы национальных и международных клиентов.</p>
-        <p>В компании оказывают весь спектр юридических услуг как для физических, так и для юридических лиц.</p>
-        <p>Для постоянных клиентов компания предлагает особые условия сотрудничества.</p>
-        <p>Компания постоянно совершенствует свой сервис для клиентов, поэтому ждет от них предложений.</p>
+      <h3>Наши сотрудники</h3>
+      <span class="employee-list">
+        <?php if (mysqli_num_rows($result) > 0) : ?>
+          <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+            <div class="employee-card">
+              <div class="employee-position"><?= $row['position'] ?></div>
+              <div class="employee-degree"><?= $row['degree'] ?></div>
+              <div class="employee-name"><?= $row['name'] ?></div>
+            </div>
+          <?php endwhile; ?>
+        <?php else : ?>
+          <p>На данный момент информации о сотрудниках нет.</p>
+        <?php endif; ?>
       </span>
+      <h3>Отзывы</h3>
+      <div class="review-list">
+        <div class="review-item">
+          <div class="client-name">Иван Петров</div>
+          <div class="review-text">Отличная компания, помогли решить сложную юридическую проблему быстро и качественно.</div>
+        </div>
+        <div class="review-item">
+          <div class="client-name">Елена Сидорова</div>
+          <div class="review-text">Спасибо за профессиональный подход и оперативное решение наших вопросов. Рекомендую!</div>
+        </div>
+        <div class="review-item">
+          <div class="client-name">Алексей Иванов</div>
+          <div class="review-text">Отличная команда юристов, всегда на связи и готовы помочь. Буду обращаться еще.</div>
+        </div>
+      </div>
     </div>
   </div>
   <?php include("common/bottom.php"); ?>

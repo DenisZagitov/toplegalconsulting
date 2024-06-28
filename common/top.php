@@ -21,8 +21,7 @@
             <a class="nav-link" href="/">Главная</a>
             <a class="nav-link" href="/about.php">О нас</a>
             <a class="nav-link" href="/aboutdogovor.php">Услуги</a>
-            <a class="nav-link" href="/otchet.php">Договоры</a>
-            <a class="nav-link" href="/read.php">Помощь</a>
+            <a class="nav-link" href="/read.php">Договоры</a>
             <a class="nav-link" href="/news.php">Новости</a>
             <a class="nav-link" href="/contacts.php">Контакты</a>
         </div>

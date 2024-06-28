@@ -6,6 +6,8 @@ bd_connect();
 ini_set('display_errors', 1);
 error_reporting(E_ALL ^ E_NOTICE);
 error_reporting(E_ALL);
+// Получение параметра type из URL
+$type = isset($_GET['type']) ? mysqli_real_escape_string($db, $_GET['type']) : '';
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -26,42 +28,64 @@ error_reporting(E_ALL);
   <div class="main-content">
     <?php include("common/top1.php"); ?>
     <div class="page-content">
-      <h3>Самые популярные</h3>
-      <div class="table-container">
-        <table>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Номер договора</th>
-              <th>Вид договора</th>
-              <th>Сумма договора</th>
-              <th>Контрагент</th>
-              <th>Ответственный юрист</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php
-            $sql = "SELECT * FROM report";
-            $q = mysqli_query($db, $sql);
-            if (mysqli_num_rows($q) > 0) :
-              while ($row = mysqli_fetch_array($q, MYSQLI_ASSOC)) : ?>
+    <h3>Главное правило делового мира: читай все, включая напечатанное мелким шрифтом.</h3>
+      <span class="paragraph-text">
+        <p>Юридическая компания ООО «TopLegalConsulting» предоставляет услуги комплексного юридического сопровождения по корпоративным и коммерческим вопросам в различных отраслях деятельности клиентов.</p>
+        <p>Также компания разрабатывает и обеспечивает клиентов всеми необходимыми видами и формами внутренних и иных документов.</p>
+        <p>Компания представляет интересы национальных и международных клиентов.</p>
+        <p>В компании оказывают весь спектр юридических услуг как для физических, так и для юридических лиц.</p>
+        <p>Для постоянных клиентов компания предлагает особые условия сотрудничества.</p>
+        <p>Компания постоянно совершенствует свой сервис для клиентов, поэтому ждет от них предложений.</p>
+      </span>
+
+      <h3>Примеры расценок на наши услуги</h3>
+      <?php
+      $sql = "SELECT * FROM report";
+      if (!empty($type)) {
+        $sql .= " WHERE `Вид договора` = '$type'";
+      }
+      $q = mysqli_query($db, $sql);
+      ?>
+      <div>
+        <?php if (mysqli_num_rows($q) > 0) : ?>
+          <table>
+            <thead>
+              <tr>
+                <th>Вид договора</th>
+                <th>Сумма договора</th>
+                <th>Статус</th>
+                <th>Дата заключения</th>
+                <th>Дата окончания</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php while ($row = mysqli_fetch_assoc($q)) : ?>
                 <tr>
-                  <td>
-                    <a href="/read.php">
-                      <img src="/img/logo2.png" alt="Загрузить" width="50" height="50">
-                    </a>
-                  </td>
-                  <td><?= $row['Номер договора'] ?></td>
-                  <td><?= $row['Вид договора'] ?></td>
-                  <td><?= $row['Сумма договора'] ?></td>
-                  <td><?= $row['Контрагент'] ?></td>
-                  <td><?= $row['Ответственный юрист'] ?></td>
+                  <td><?= isset($row['Вид договора']) ? htmlspecialchars($row['Вид договора']) : '' ?></td>
+                  <td><?= isset($row['Сумма договора']) ? htmlspecialchars($row['Сумма договора']) : '' ?></td>
+                  <td><?= isset($row['Статус']) ? htmlspecialchars($row['Статус']) : '' ?></td>
+                  <td><?= isset($row['Дата заключения']) ? htmlspecialchars($row['Дата заключения']) : '' ?></td>
+                  <td><?= isset($row['Дата окончания']) ? htmlspecialchars($row['Дата окончания']) : '' ?></td>
                 </tr>
-            <?php endwhile;
-            endif; ?>
-          </tbody>
-        </table>
+              <?php endwhile; ?>
+            </tbody>
+          </table>
+        <?php else : ?>
+          <p>Нет данных для отображения.</p>
+        <?php endif; ?>
       </div>
+      <div class="btn-container">
+        <button onclick="window.print();" class="btn-new">Печать</button>
+      <?
+        if (!empty($type))  {
+          ?>
+          <a href="/">
+            <button class="btn-new">Сброс фильтра</button>
+          </a>
+          <?php }?>
+        </div>
+          
+
     </div>
 
   </div>

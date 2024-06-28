@@ -144,3 +144,57 @@ a:hover {
     font-size: small;
     font-style: italic;
 }
+
+/* CSS для карточек сотрудников */
+.employee-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+.employee-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.employee-card .employee-position {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.employee-card .employee-degree {
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.employee-card .employee-name {
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Стили для отзывов */
+.review-list {
+    margin-top: 20px;
+}
+
+.review-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.review-item .client-name {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.review-item .review-text {
+    color: #555;
+    font-style: italic;
+}
