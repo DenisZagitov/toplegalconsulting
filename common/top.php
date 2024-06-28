@@ -24,6 +24,9 @@
             <a class="nav-link" href="/read.php">Договоры</a>
             <a class="nav-link" href="/news.php">Новости</a>
             <a class="nav-link" href="/contacts.php">Контакты</a>
+            <?php if(isset($_SESSION['role_id']) && $_SESSION['role_id'] == 3) { ?>
+                <a class='nav-link' href='/otchet.php'>Отчет</a>
+            <?php } ?>
         </div>
     </nav>
     <h1>Юридическая компания «TopLegalConsulting»</h1>

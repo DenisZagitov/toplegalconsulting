@@ -1,16 +1,14 @@
 <?php
-// Содержит форму для подачи заявки на юридическую консультацию.
-// Содержит компоненты для загрузки шаблонов договоров на компьютер
 session_start();
 include("common/func.php");
-$conn = bd_connect(); // Установка соединения с базой данных
-
+bd_connect();
 ini_set('display_errors', 1);
 error_reporting(E_ALL ^ E_NOTICE);
+error_reporting(E_ALL);
 
 // Проверка на авторизацию пользователя
 $authorized = isset($_SESSION['name_client']);
-
+$client_id = $_SESSION['client_id'] ?? null; // Идентификатор клиента
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -53,10 +51,30 @@ $authorized = isset($_SESSION['name_client']);
         </div>
         <?php if ($authorized) : ?>
           <?php
-          if (isset($_FILES['inputfile'])) {
-            $destination_dir = __DIR__ . '/dogs/new/' . basename($_FILES['inputfile']['name']);
+
+          if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['inputfile'])) {
+            // Извлекаем оригинальное имя файла из загруженного файла
+            $original_filename = basename($_FILES['inputfile']['name']);
+            // Указываем директорию и имя для сохранения файла
+            $destination_dir = __DIR__ . '/dogs/new/' . $original_filename;
+            // Перемещаем загруженный файл в указанную директорию
             if (move_uploaded_file($_FILES['inputfile']['tmp_name'], $destination_dir)) {
-              echo "<p>Файл успешно загружен!</p>";
+              // Получаем комментарий из POST-запроса
+              $comment = $_POST['comment'];
+              // Получаем ID клиента из сессии
+              $client_id = $_SESSION['client_id'];  // Убедитесь, что этот ключ существует в сессии
+              // Подготовка SQL-запроса для вставки данных в таблицу contract
+              $stmt = $db->prepare("INSERT INTO contract (file_path, comment, client_id, uploaded_at) VALUES (?, ?, ?, NOW())");
+              // Привязываем параметры к SQL-запросу
+              $stmt->bind_param("ssi", $destination_dir, $comment, $client_id);
+              // Выполняем SQL-запрос
+              if ($stmt->execute()) {
+                echo "<p>Файл ". $original_filename ." успешно загружен и информация сохранена в базе данных!</p>";
+              } else {
+                echo "<p>Ошибка при сохранении информации в базе данных: " . $stmt->error . "</p>";
+              }
+              // Закрываем подготовленный запрос
+              $stmt->close();
             } else {
               echo "<p>Ошибка при загрузке файла!</p>";
               switch ($_FILES['inputfile']['error']) {
@@ -89,17 +107,21 @@ $authorized = isset($_SESSION['name_client']);
           }
           ?>
 
-          <form enctype='multipart/form-data' action='read.php' method="post" class="upload-form">
+          <form enctype='multipart/form-data' action='' method="post" class="upload-form">
             <div class="form-group">
               <label for="inputfile"><span class="paragraph-text">Загрузить заполненный шаблон договора</span></label>
               <input class="form-control-file" type="file" id="inputfile" name="inputfile">
+            </div>
+            <div class="form-group">
+              <label for="comment"><span class="paragraph-text">Комментарий</span></label>
+              <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
             </div>
             <div class="form-group">
               <input class="btn-new" type="submit" value="Нажмите для сохранения">
             </div>
           </form>
         <?php else : ?>
-          <p></p>
+          <p>Вы должны войти в систему, чтобы загрузить файл.</p>
         <?php endif; ?>
       </div>
     </div>

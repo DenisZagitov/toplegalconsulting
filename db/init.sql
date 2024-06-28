@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `client` (
     `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT "Адрес",
     `phone` varchar(50) NOT NULL COMMENT "Телефон",
     `comment` text CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT "Комментарий",
-    `role_id` int(11) COMMENT "Роль",
+    `role_id` int(11) DEFAULT 2 COMMENT "Роль",
     PRIMARY KEY (`client_id`),
     KEY `role_id` (`role_id`),
     CONSTRAINT `client_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `role` (`role_id`)
@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `employee` (
     `phone` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT "Телефон",
     `degree` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT "Ученая степень",
     `position` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT "Должность",
-    `role_id` int(11) COMMENT "Роль",
+    `role_id` int(11) DEFAULT 3 COMMENT "Роль",
     PRIMARY KEY (`employee_id`),
     KEY `role_id` (`role_id`),
     CONSTRAINT `employee_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `role` (`role_id`)
@@ -220,15 +220,17 @@ VALUES (
 -- Структура таблицы `contract`
 CREATE TABLE IF NOT EXISTS `contract` (
     `contract_id` int(11) NOT NULL AUTO_INCREMENT COMMENT "Номер договора",
-    `type_id` int(11) NOT NULL COMMENT "ID вида",
+    `type_id` int(11) COMMENT "ID вида",
     `amount` int(11) COMMENT "Сумма договора",
     `organization_id` int(11) COMMENT "Контрагент",
     `client_id` int(11) COMMENT "ID Клиента",
     `comment` text CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT "Примечание",
     `employee_id` int(11) COMMENT "Ответственный",
-    `status_id` int(11) NOT NULL COMMENT "Статус договора",
+    `status_id` int(11) NOT NULL DEFAULT 1 COMMENT "Статус договора",
     `start_date` date COMMENT "Дата заключения",
     `end_date` date COMMENT "Дата окончания",
+    `file_path` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT "Путь к файлу",
+    `uploaded_at` datetime COMMENT "Дата загрузки",
     PRIMARY KEY (`contract_id`),
     KEY `type_id` (`type_id`),
     KEY `organization_id` (`organization_id`),

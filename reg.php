@@ -12,11 +12,13 @@ error_reporting(E_ALL);
 if (isset($_GET['enter'])) {
     $email = mysqli_real_escape_string($db, $_GET['email']);
     $password = mysqli_real_escape_string($db, $_GET['current-password']);
-    $q_guest = mysqli_query($db, "SELECT `client_id`,`name` FROM `client` WHERE `email`='$email' AND `password`='$password' limit 1");
+    $q_guest = mysqli_query($db, "SELECT `client_id`,`name`, `role_id` FROM `client` WHERE `email`='$email' AND `password`='$password' limit 1");
     if (mysqli_num_rows($q_guest) == 1) {
         $row_q_guest = mysqli_fetch_array($q_guest, MYSQLI_NUM);
         $_SESSION['client_id'] = $row_q_guest[0];
         $_SESSION['name_client'] = $row_q_guest[1];
+        $_SESSION['role_id'] = $row_q_guest[2];
+
     }
     header("Location: /");
     exit();
