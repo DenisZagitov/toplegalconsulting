@@ -7,7 +7,7 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL ^ E_NOTICE);
 error_reporting(E_ALL);
 // Извлечение сотрудников из базы данных
-$query = "SELECT name, degree, position FROM employee;";
+$query = "SELECT name, degree, position FROM user WHERE role_id = 3";
 $result = mysqli_query($db, $query);
 ?>
 <!DOCTYPE html>
@@ -41,7 +41,7 @@ $result = mysqli_query($db, $query);
           <p>На данный момент информации о сотрудниках нет.</p>
         <?php endif; ?>
       </span>
-      <h3>Отзывы</h3>
+      <h3>Отзывы клиентов</h3>
       <div class="review-list">
         <div class="review-item">
           <div class="client-name">Иван Петров</div>

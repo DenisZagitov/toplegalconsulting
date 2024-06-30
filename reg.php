@@ -12,10 +12,10 @@ error_reporting(E_ALL);
 if (isset($_GET['enter'])) {
     $email = mysqli_real_escape_string($db, $_GET['email']);
     $password = mysqli_real_escape_string($db, $_GET['current-password']);
-    $q_guest = mysqli_query($db, "SELECT `client_id`,`name`, `role_id` FROM `client` WHERE `email`='$email' AND `password`='$password' limit 1");
+    $q_guest = mysqli_query($db, "SELECT `user_id`,`name`, `role_id` FROM `user` WHERE `email`='$email' AND `password`='$password' limit 1");
     if (mysqli_num_rows($q_guest) == 1) {
         $row_q_guest = mysqli_fetch_array($q_guest, MYSQLI_NUM);
-        $_SESSION['client_id'] = $row_q_guest[0];
+        $_SESSION['user_id'] = $row_q_guest[0];
         $_SESSION['name_client'] = $row_q_guest[1];
         $_SESSION['role_id'] = $row_q_guest[2];
 
@@ -30,7 +30,7 @@ if (isset($_GET['enter'])) {
     $phone = mysqli_real_escape_string($db, $_POST['phone']);
     $comment = mysqli_real_escape_string($db, $_POST['comment']);
 
-    $sql = "INSERT INTO `client` (`name`, `email`, `password`, `address`, `phone`, `comment`) VALUES ('$name', '$email', '$password', '$address', '$phone', '$comment')";
+    $sql = "INSERT INTO `user` (`name`, `email`, `password`, `address`, `phone`, `comment`) VALUES ('$name', '$email', '$password', '$address', '$phone', '$comment')";
 
     if (mysqli_query($db, $sql)) {
         $_SESSION['success_message'] = "Регистрация прошла успешно!";
@@ -40,7 +40,7 @@ if (isset($_GET['enter'])) {
         echo "Error: " . $sql . "" . mysqli_error($db);
     }
 } elseif (isset($_GET['exit'])) {
-    unset($_SESSION['client_id']);
+    unset($_SESSION['user_id']);
     unset($_SESSION['name_client']);
     header("Location: /");
     exit();

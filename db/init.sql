@@ -22,30 +22,37 @@ INSERT INTO
 VALUES (1, 'Гость'),
     (2, 'Пользователь сайта'),
     (3, 'Администратор сайта');
--- Структура таблицы `client`
-CREATE TABLE IF NOT EXISTS `client` (
-    `client_id` int(11) NOT NULL AUTO_INCREMENT COMMENT "ID Клиента",
-    `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT "Фамилия И.О.",
-    `email` varchar(50) NOT NULL COMMENT "Электронная почта",
-    `password` varchar(24) NOT NULL COMMENT "Пароль",
-    `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT "Адрес",
-    `phone` varchar(50) NOT NULL COMMENT "Телефон",
+
+-- Структура новой таблицы `user`
+CREATE TABLE IF NOT EXISTS `user` (
+    `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT "ID пользователя",
+    `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT "ФИО",
+    `email` varchar(100) NOT NULL COMMENT "Электронная почта",
+    `password` varchar(255) NOT NULL COMMENT "Пароль",
+    `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT "Адрес",
+    `phone` varchar(50) COMMENT "Телефон",
     `comment` text CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT "Комментарий",
+    `degree` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT "Ученая степень",
+    `position` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT "Должность",
     `role_id` int(11) DEFAULT 2 COMMENT "Роль",
-    PRIMARY KEY (`client_id`),
+    PRIMARY KEY (`user_id`),
     KEY `role_id` (`role_id`),
-    CONSTRAINT `client_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `role` (`role_id`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8 COMMENT = "Клиент";
--- Дамп данных таблицы `client`
+    CONSTRAINT `user_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `role` (`role_id`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8 COMMENT = "Пользователь";
+
+-- Дамп данных таблицы `user`
 INSERT INTO
-    `client` (
-        `client_id`,
+    `user` (
+        `user_id`,
         `name`,
         `email`,
         `password`,
         `address`,
         `phone`,
-        `comment`
+        `comment`,
+        `degree`,
+        `position`,
+        `role_id`
     )
 VALUES (
         1,
@@ -54,7 +61,82 @@ VALUES (
         '123',
         'Пирогова 8',
         '776994',
-        ''
+        '',
+        '',
+        '',
+        2
+    ),
+    (
+        2,
+        'Колпакова Анастасия Тимофеевна',
+        'anastasia.kolpakova@toplegalconsult.com',
+        'password1',
+        'ул. Ленина, 12',
+        '+7 940 289-8526',
+        'Отличный сотрудник',
+        'Доктор юриспруденции',
+        'Старший адвокат',
+        3
+    ),
+    (
+        3,
+        'Каргина Алёна Андреевна',
+        'alena.kargina@toplegalconsult.com',
+        'password2',
+        'ул. Герцена, 34',
+        '+7 927 123-8730',
+        'Профессиональный адвокат',
+        'Кандидат юридических наук',
+        'Адвокат',
+        3
+    ),
+    (
+        4,
+        'Герасимов Кирилл Вадимович',
+        'kirill.gerasimov@toplegalconsult.com',
+        'password3',
+        'ул. Пушкина, 56',
+        '+7 950 132-9458',
+        'Партнер фирмы',
+        'Доктор юриспруденции',
+        'Партнер',
+        3
+    ),
+    (
+        5,
+        'Шевченко Ева Никитична',
+        'eva.shevchenko@toplegalconsult.com',
+        'password4',
+        'ул. Садовая, 78',
+        '+7 964 113-9652',
+        'Опытный адвокат',
+        'Кандидат юридических наук',
+        'Старший адвокат',
+        3
+    ),
+    (
+        6,
+        'Тихонов Юрий Константинович',
+        'yuri.tikhonov@toplegalconsult.com',
+        'password5',
+        'ул. Московская, 90',
+        '+7 903 145-9856',
+        'Партнер фирмы',
+        'Доктор юриспруденции',
+        'Партнер',
+        3
+    ),
+    (
+        7,
+        'Якуничева Анна Евгеньевна',
+        'anna.yakunicheva@toplegalconsult.com',
+        'password6',
+        'ул. Пирогова, 23',
+        '+7 987 428-6935',
+        'Опытный адвокат',
+        'Кандидат юридических наук',
+        'Адвокат',
+        3
     );
 
 -- Структура таблицы `contract_type`
@@ -96,71 +178,6 @@ VALUES (1, 'Проект'),
     (4, 'Расторгнут'),
     (5, 'На согласовании');
 
--- Структура таблицы `employee`
-CREATE TABLE IF NOT EXISTS `employee` (
-    `employee_id` int(11) NOT NULL AUTO_INCREMENT COMMENT "Табельный номер",
-    `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT "ФИО",
-    `phone` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT "Телефон",
-    `degree` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT "Ученая степень",
-    `position` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT "Должность",
-    `role_id` int(11) DEFAULT 3 COMMENT "Роль",
-    PRIMARY KEY (`employee_id`),
-    KEY `role_id` (`role_id`),
-    CONSTRAINT `employee_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `role` (`role_id`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8 COMMENT = "Сотрудник";
-
--- Дамп данных таблицы `employee`
-INSERT INTO
-    `employee` (
-        `employee_id`,
-        `name`,
-        `phone`,
-        `degree`,
-        `position`
-    )
-VALUES (
-        1,
-        'Колпакова Анастасия Тимофеевна',
-        '+7 940 289-8526',
-        'Доктор юриспруденции',
-        'Старший адвокат'
-    ),
-    (
-        2,
-        'Каргина Алёна Андреевна',
-        '+7 927 123-8730',
-        'Кандидат юридических наук',
-        'Адвокат'
-    ),
-    (
-        3,
-        'Герасимов Кирилл Вадимович',
-        '+7 950 132-9458',
-        'Доктор юриспруденции',
-        'Партнер'
-    ),
-    (
-        4,
-        'Шевченко Ева Никитична',
-        '+7 964 113-9652',
-        'Кандидат юридических наук',
-        'Старший адвокат'
-    ),
-    (
-        5,
-        'Тихонов Юрий Константинович',
-        '+7 903 145-9856',
-        'Доктор юриспруденции',
-        'Партнер'
-    ),
-    (
-        6,
-        'Якуничева Анна Евгеньевна',
-        '+7 987 428-6935',
-        'Кандидат юридических наук',
-        'Адвокат'
-    );
-
 -- Структура таблицы `organization`
 CREATE TABLE IF NOT EXISTS `organization` (
     `organization_id` int(11) NOT NULL AUTO_INCREMENT COMMENT "ID Контрагента",
@@ -168,10 +185,10 @@ CREATE TABLE IF NOT EXISTS `organization` (
     `inn` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT "ИНН",
     `phone` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT "Телефон",
     `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT "Адрес",
-    `employee_id` int(11) COMMENT "Ответственный",
+    `representative_id` int(11) COMMENT "Представитель контрагента",
     PRIMARY KEY (`organization_id`),
-    KEY `employee_id` (`employee_id`),
-    CONSTRAINT `organization_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`employee_id`)
+    KEY `representative_id` (`representative_id`),
+    CONSTRAINT `organization_ibfk_1` FOREIGN KEY (`representative_id`) REFERENCES `user` (`user_id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8 COMMENT = "Контрагент";
 
 -- Дамп данных таблицы `organization`
@@ -182,7 +199,7 @@ INSERT INTO
         `inn`,
         `phone`,
         `address`,
-        `employee_id`
+        `representative_id`
     )
 VALUES (
         1,
@@ -190,7 +207,7 @@ VALUES (
         '7018012970',
         '+7 382 252-97-72',
         'пр. Ленина, 36, Томск, Томская обл., Россия, 634050',
-        1
+        2
     ),
     (
         2,
@@ -198,7 +215,7 @@ VALUES (
         '7204080543',
         '+7 345 245-64-68',
         'ул. Герцена, 86А, Тюмень, Тюменская обл., Россия, 625000',
-        2
+        3
     ),
     (
         3,
@@ -206,7 +223,7 @@ VALUES (
         '7203115232',
         '+7 3452 56-15-56',
         '625009, Тюменская обл, Тюмень г, Товарное шоссе ул, 15',
-        3
+        4
     ),
     (
         4,
@@ -214,7 +231,7 @@ VALUES (
         '7203250489',
         '+7 3452 63-88-90',
         '625034, Тюменская область, город Тюмень, Камчатская ул., д. 183',
-        4
+        5
     );
 
 -- Структура таблицы `contract`
@@ -225,7 +242,7 @@ CREATE TABLE IF NOT EXISTS `contract` (
     `organization_id` int(11) COMMENT "Контрагент",
     `client_id` int(11) COMMENT "ID Клиента",
     `comment` text CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT "Примечание",
-    `employee_id` int(11) COMMENT "Ответственный",
+    `responsible_id` int(11) COMMENT "Ответственный",
     `status_id` int(11) NOT NULL DEFAULT 1 COMMENT "Статус договора",
     `start_date` date COMMENT "Дата заключения",
     `end_date` date COMMENT "Дата окончания",
@@ -235,12 +252,12 @@ CREATE TABLE IF NOT EXISTS `contract` (
     KEY `type_id` (`type_id`),
     KEY `organization_id` (`organization_id`),
     KEY `client_id` (`client_id`),
-    KEY `employee_id` (`employee_id`),
+    KEY `responsible_id` (`responsible_id`),
     KEY `status_id` (`status_id`),
     CONSTRAINT `contract_ibfk_1` FOREIGN KEY (`type_id`) REFERENCES `contract_type` (`type_id`),
     CONSTRAINT `contract_ibfk_2` FOREIGN KEY (`organization_id`) REFERENCES `organization` (`organization_id`),
-    CONSTRAINT `contract_ibfk_3` FOREIGN KEY (`client_id`) REFERENCES `client` (`client_id`),
-    CONSTRAINT `contract_ibfk_4` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`employee_id`),
+    CONSTRAINT `contract_ibfk_3` FOREIGN KEY (`client_id`) REFERENCES `user` (`user_id`),
+    CONSTRAINT `contract_ibfk_4` FOREIGN KEY (`responsible_id`) REFERENCES `user` (`user_id`),
     CONSTRAINT `contract_ibfk_5` FOREIGN KEY (`status_id`) REFERENCES `contract_status` (`status_id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8 COMMENT = "Договор";
 
@@ -253,7 +270,7 @@ INSERT INTO
         `organization_id`,
         `client_id`,
         `comment`,
-        `employee_id`,
+        `responsible_id`,
         `status_id`,
         `start_date`,
         `end_date`
@@ -265,7 +282,7 @@ VALUES (
         1,
         1,
         '',
-        1,
+        2,
         1,
         '2023-01-01',
         '2023-12-31'
@@ -325,7 +342,7 @@ VALUES (
         4,
         1,
         '',
-        1,
+        4,
         2,
         '2023-03-15',
         '2023-09-15'
@@ -412,11 +429,11 @@ CREATE TABLE IF NOT EXISTS `news` (
     `news_id` int(11) NOT NULL AUTO_INCREMENT COMMENT "ID новости",
     `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT "Заголовок",
     `content` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT "Содержание",
-    `employee_id` int(11) NOT NULL COMMENT "ID автора",
+    `author_id` int(11) NOT NULL COMMENT "ID автора",
     `published_date` date NOT NULL COMMENT "Дата публикации",
     PRIMARY KEY (`news_id`),
-    KEY `employee_id` (`employee_id`),
-    CONSTRAINT `news_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`employee_id`)
+    KEY `author_id` (`author_id`),
+    CONSTRAINT `news_ibfk_1` FOREIGN KEY (`author_id`) REFERENCES `user` (`user_id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8 COMMENT = "Новости";
 
 -- Дамп данных таблицы `news`
@@ -425,7 +442,7 @@ INSERT INTO
         `news_id`,
         `title`,
         `content`,
-        `employee_id`,
+        `author_id`,
         `published_date`
     )
 VALUES (
@@ -457,13 +474,13 @@ SELECT
     ct.name AS "Вид договора",
     c.amount AS "Сумма договора",
     o.name AS "Контрагент",
-    e.name AS "Ответственный юрист",
+    u.name AS "Ответственный юрист",
     cs.name AS "Статус",
-    c.start_date AS "Дата заключения",
-    c.end_date AS "Дата окончания"
+    DATE_FORMAT(c.start_date, '%d.%m.%Y') AS "Дата заключения",
+    DATE_FORMAT(c.end_date, '%d.%m.%Y') AS "Дата окончания"
 FROM
     contract c
     INNER JOIN contract_type ct ON c.type_id = ct.type_id
     INNER JOIN organization o ON c.organization_id = o.organization_id
-    INNER JOIN employee e ON c.employee_id = e.employee_id
+    INNER JOIN user u ON c.responsible_id = u.user_id
     INNER JOIN contract_status cs ON c.status_id = cs.status_id;

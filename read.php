@@ -8,7 +8,7 @@ error_reporting(E_ALL);
 
 // Проверка на авторизацию пользователя
 $authorized = isset($_SESSION['name_client']);
-$client_id = $_SESSION['client_id'] ?? null; // Идентификатор клиента
+$user_id = $_SESSION['user_id'] ?? null; // Идентификатор клиента
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -62,11 +62,11 @@ $client_id = $_SESSION['client_id'] ?? null; // Идентификатор кл�
               // Получаем комментарий из POST-запроса
               $comment = $_POST['comment'];
               // Получаем ID клиента из сессии
-              $client_id = $_SESSION['client_id'];  // Убедитесь, что этот ключ существует в сессии
+              $user_id = $_SESSION['user_id'];  // Убедитесь, что этот ключ существует в сессии
               // Подготовка SQL-запроса для вставки данных в таблицу contract
-              $stmt = $db->prepare("INSERT INTO contract (file_path, comment, client_id, uploaded_at) VALUES (?, ?, ?, NOW())");
+              $stmt = $db->prepare("INSERT INTO contract (file_path, comment, user_id, uploaded_at) VALUES (?, ?, ?, NOW())");
               // Привязываем параметры к SQL-запросу
-              $stmt->bind_param("ssi", $destination_dir, $comment, $client_id);
+              $stmt->bind_param("ssi", $destination_dir, $comment, $user_id);
               // Выполняем SQL-запрос
               if ($stmt->execute()) {
                 echo "<p>Файл ". $original_filename ." успешно загружен и информация сохранена в базе данных!</p>";
@@ -113,7 +113,7 @@ $client_id = $_SESSION['client_id'] ?? null; // Идентификатор кл�
               <input class="form-control-file" type="file" id="inputfile" name="inputfile">
             </div>
             <div class="form-group">
-              <label for="comment"><span class="paragraph-text">Комментарий</span></label>
+              <label for="comment"><span class="paragraph-text">Комментарий для юриста:</span></label>
               <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
             </div>
             <div class="form-group">

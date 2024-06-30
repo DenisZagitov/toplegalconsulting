@@ -169,6 +169,7 @@ a:hover {
 .employee-card .employee-degree {
     color: #666;
     margin-bottom: 8px;
+    min-height: 30%;
 }
 
 .employee-card .employee-name {

@@ -1,7 +1,7 @@
 <div class="header-container">
     <header>
         <div class="logo-container">
-            <a href="#" class="logo"><img src="/img/hotpng.png" alt="Лого"></a>
+            <a href="/" class="logo"><img src="/img/hotpng.png" alt="Лого"></a>
         </div>
         <div class="contact-info">
             <div class="phone-info">

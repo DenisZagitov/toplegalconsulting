@@ -36,7 +36,7 @@ $result = mysqli_query($db, $query);
             <div class="news-item">
               <div class="news_date">Дата публикации: <?= $row['published_date'] ?></div>
               <h4><a href="/news_detail.php?id=<?= $row['news_id'] ?>"><?= $row['title'] ?></a></h4>
-              <p><?= $row['content']?></p>
+              <p><?= $row['content'] ?></p>
             </div>
           <?php endwhile; ?>
         <?php else : ?>
