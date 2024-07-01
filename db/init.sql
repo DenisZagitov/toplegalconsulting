@@ -1,46 +1,43 @@
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 
-SET time_zone = "+00:00";
+CREATE DATABASE IF NOT EXISTS `toplegalconsulting`;
 
-CREATE DATABASE IF NOT EXISTS `toplegalconsulting` CHARACTER SET utf8 COLLATE utf8_general_ci;
+SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci';
 
 USE `toplegalconsulting`;
 
--- Устанавливаем кодировку и коллацию на уровне соединения
-SET NAMES 'utf8' COLLATE 'utf8_general_ci';
-
--- Структура таблицы `role`
+-- Таблица `role`
 CREATE TABLE IF NOT EXISTS `role` (
-    `role_id` int(11) NOT NULL AUTO_INCREMENT COMMENT "ID роли",
-    `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT "Роль",
+    `role_id` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'ID роли',
+    `name` VARCHAR(50) NOT NULL COMMENT 'Роль',
     PRIMARY KEY (`role_id`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8 COMMENT = "Роль";
+) ENGINE = InnoDB COMMENT = 'Роль';
 
--- Дамп данных таблицы `role`
+-- Данные для таблицы `role`
 INSERT INTO
     `role` (`role_id`, `name`)
 VALUES (1, 'Гость'),
     (2, 'Пользователь сайта'),
     (3, 'Администратор сайта');
 
--- Структура новой таблицы `user`
+-- Таблица `user`
 CREATE TABLE IF NOT EXISTS `user` (
-    `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT "ID пользователя",
-    `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT "ФИО",
-    `email` varchar(100) NOT NULL COMMENT "Электронная почта",
-    `password` varchar(255) NOT NULL COMMENT "Пароль",
-    `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT "Адрес",
-    `phone` varchar(50) COMMENT "Телефон",
-    `comment` text CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT "Комментарий",
-    `degree` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT "Ученая степень",
-    `position` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT "Должность",
-    `role_id` int(11) DEFAULT 2 COMMENT "Роль",
+    `user_id` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'ID пользователя',
+    `name` VARCHAR(100) NOT NULL COMMENT 'ФИО',
+    `email` VARCHAR(100) NOT NULL COMMENT 'Электронная почта',
+    `password` VARCHAR(255) NOT NULL COMMENT 'Пароль',
+    `address` VARCHAR(255) COMMENT 'Адрес',
+    `phone` VARCHAR(50) COMMENT 'Телефон',
+    `comment` TEXT COMMENT 'Комментарий',
+    `degree` VARCHAR(255) COMMENT 'Ученая степень',
+    `position` VARCHAR(255) COMMENT 'Должность',
+    `role_id` INT(11) DEFAULT 2 COMMENT 'Роль',
     PRIMARY KEY (`user_id`),
     KEY `role_id` (`role_id`),
     CONSTRAINT `user_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `role` (`role_id`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8 COMMENT = "Пользователь";
+) ENGINE = InnoDB COMMENT = 'Пользователь';
 
--- Дамп данных таблицы `user`
+-- Данные для таблицы `user`
 INSERT INTO
     `user` (
         `user_id`,
@@ -139,14 +136,14 @@ VALUES (
         3
     );
 
--- Структура таблицы `contract_type`
+-- Таблица `contract_type`
 CREATE TABLE IF NOT EXISTS `contract_type` (
-    `type_id` int(11) NOT NULL AUTO_INCREMENT COMMENT "ID вида договора",
-    `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT "Вид договора",
+    `type_id` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'ID вида договора',
+    `name` VARCHAR(255) NOT NULL COMMENT 'Вид договора',
     PRIMARY KEY (`type_id`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8 COMMENT = "Вид договора";
+) ENGINE = InnoDB COMMENT = 'Вид договора';
 
--- Дамп данных таблицы `contract_type`
+-- Данные для таблицы `contract_type`
 INSERT INTO
     `contract_type` (`type_id`, `name`)
 VALUES (
@@ -162,14 +159,14 @@ VALUES (
         'Договор оказания услуг с адвокатом'
     );
 
--- Структура таблицы `contract_status`
+-- Таблица `contract_status`
 CREATE TABLE IF NOT EXISTS `contract_status` (
-    `status_id` int(11) NOT NULL AUTO_INCREMENT COMMENT "ID статуса",
-    `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT "Статус",
+    `status_id` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'ID статуса',
+    `name` VARCHAR(255) NOT NULL COMMENT 'Статус',
     PRIMARY KEY (`status_id`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8 COMMENT = "Статус договора";
+) ENGINE = InnoDB COMMENT = 'Статус договора';
 
--- Дамп данных таблицы `contract_status`
+-- Данные для таблицы `contract_status`
 INSERT INTO
     `contract_status` (`status_id`, `name`)
 VALUES (1, 'Проект'),
@@ -178,20 +175,20 @@ VALUES (1, 'Проект'),
     (4, 'Расторгнут'),
     (5, 'На согласовании');
 
--- Структура таблицы `organization`
+-- Таблица `organization`
 CREATE TABLE IF NOT EXISTS `organization` (
-    `organization_id` int(11) NOT NULL AUTO_INCREMENT COMMENT "ID Контрагента",
-    `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT "Наименование",
-    `inn` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT "ИНН",
-    `phone` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT "Телефон",
-    `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT "Адрес",
-    `representative_id` int(11) COMMENT "Представитель контрагента",
+    `organization_id` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'ID Контрагента',
+    `name` VARCHAR(255) NOT NULL COMMENT 'Наименование',
+    `inn` VARCHAR(255) NOT NULL COMMENT 'ИНН',
+    `phone` VARCHAR(255) COMMENT 'Телефон',
+    `address` VARCHAR(255) COMMENT 'Адрес',
+    `representative_id` INT(11) COMMENT 'Представитель контрагента',
     PRIMARY KEY (`organization_id`),
     KEY `representative_id` (`representative_id`),
     CONSTRAINT `organization_ibfk_1` FOREIGN KEY (`representative_id`) REFERENCES `user` (`user_id`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8 COMMENT = "Контрагент";
+) ENGINE = InnoDB COMMENT = 'Контрагент';
 
--- Дамп данных таблицы `organization`
+-- Данные для таблицы `organization`
 INSERT INTO
     `organization` (
         `organization_id`,
@@ -234,20 +231,20 @@ VALUES (
         5
     );
 
--- Структура таблицы `contract`
+-- Таблица `contract`
 CREATE TABLE IF NOT EXISTS `contract` (
-    `contract_id` int(11) NOT NULL AUTO_INCREMENT COMMENT "Номер договора",
-    `type_id` int(11) COMMENT "ID вида",
-    `amount` int(11) COMMENT "Сумма договора",
-    `organization_id` int(11) COMMENT "Контрагент",
-    `client_id` int(11) COMMENT "ID Клиента",
-    `comment` text CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT "Примечание",
-    `responsible_id` int(11) COMMENT "Ответственный",
-    `status_id` int(11) NOT NULL DEFAULT 1 COMMENT "Статус договора",
-    `start_date` date COMMENT "Дата заключения",
-    `end_date` date COMMENT "Дата окончания",
-    `file_path` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT "Путь к файлу",
-    `uploaded_at` datetime COMMENT "Дата загрузки",
+    `contract_id` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'Номер договора',
+    `type_id` INT(11) COMMENT 'ID вида',
+    `amount` INT(11) COMMENT 'Сумма договора',
+    `organization_id` INT(11) COMMENT 'Контрагент',
+    `client_id` INT(11) COMMENT 'ID Клиента',
+    `comment` TEXT COMMENT 'Примечание',
+    `responsible_id` INT(11) COMMENT 'Ответственный',
+    `status_id` INT(11) NOT NULL DEFAULT 1 COMMENT 'Статус договора',
+    `start_date` DATE COMMENT 'Дата заключения',
+    `end_date` DATE COMMENT 'Дата окончания',
+    `file_path` VARCHAR(255) COMMENT 'Путь к файлу',
+    `uploaded_at` DATETIME COMMENT 'Дата загрузки',
     PRIMARY KEY (`contract_id`),
     KEY `type_id` (`type_id`),
     KEY `organization_id` (`organization_id`),
@@ -259,9 +256,9 @@ CREATE TABLE IF NOT EXISTS `contract` (
     CONSTRAINT `contract_ibfk_3` FOREIGN KEY (`client_id`) REFERENCES `user` (`user_id`),
     CONSTRAINT `contract_ibfk_4` FOREIGN KEY (`responsible_id`) REFERENCES `user` (`user_id`),
     CONSTRAINT `contract_ibfk_5` FOREIGN KEY (`status_id`) REFERENCES `contract_status` (`status_id`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8 COMMENT = "Договор";
+) ENGINE = InnoDB COMMENT = 'Договор';
 
--- Дамп данных таблицы `contract`
+-- Данные для таблицы `contract`
 INSERT INTO
     `contract` (
         `contract_id`,
@@ -360,26 +357,26 @@ VALUES (
         '2023-11-10'
     );
 
--- Структура таблицы contract_status_history
-CREATE TABLE IF NOT EXISTS contract_status_history (
-    history_id int(11) NOT NULL AUTO_INCREMENT COMMENT "ID истории",
-    contract_id int(11) NOT NULL COMMENT "Номер договора",
-    status_id int(11) NOT NULL COMMENT "Статус договора",
-    changed_at datetime NOT NULL COMMENT "Дата изменения статуса",
-    PRIMARY KEY (history_id),
-    KEY contract_id (contract_id),
-    KEY status_id (status_id),
-    CONSTRAINT contract_status_history_ibfk_1 FOREIGN KEY (contract_id) REFERENCES contract (contract_id),
-    CONSTRAINT contract_status_history_ibfk_2 FOREIGN KEY (status_id) REFERENCES contract_status (status_id)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8 COMMENT = "История изменения статусов договора";
+-- Таблица `contract_status_history`
+CREATE TABLE IF NOT EXISTS `contract_status_history` (
+    `history_id` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'ID истории',
+    `contract_id` INT(11) NOT NULL COMMENT 'Номер договора',
+    `status_id` INT(11) NOT NULL COMMENT 'Статус договора',
+    `changed_at` DATETIME NOT NULL COMMENT 'Дата изменения статуса',
+    PRIMARY KEY (`history_id`),
+    KEY `contract_id` (`contract_id`),
+    KEY `status_id` (`status_id`),
+    CONSTRAINT `contract_status_history_ibfk_1` FOREIGN KEY (`contract_id`) REFERENCES `contract` (`contract_id`),
+    CONSTRAINT `contract_status_history_ibfk_2` FOREIGN KEY (`status_id`) REFERENCES `contract_status` (`status_id`)
+) ENGINE = InnoDB COMMENT = 'История изменения статусов договора';
 
--- Дамп данных таблицы contract_status_history
+-- Данные для таблицы `contract_status_history`
 INSERT INTO
-    contract_status_history (
-        history_id,
-        contract_id,
-        status_id,
-        changed_at
+    `contract_status_history` (
+        `history_id`,
+        `contract_id`,
+        `status_id`,
+        `changed_at`
     )
 VALUES (
         1,
@@ -424,19 +421,19 @@ VALUES (
         '2023-07-05 15:00:00'
     );
 
--- Структура таблицы `news`
+-- Таблица `news`
 CREATE TABLE IF NOT EXISTS `news` (
-    `news_id` int(11) NOT NULL AUTO_INCREMENT COMMENT "ID новости",
-    `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT "Заголовок",
-    `content` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT "Содержание",
-    `author_id` int(11) NOT NULL COMMENT "ID автора",
-    `published_date` date NOT NULL COMMENT "Дата публикации",
+    `news_id` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'ID новости',
+    `title` VARCHAR(255) NOT NULL COMMENT 'Заголовок',
+    `content` TEXT COMMENT 'Содержание',
+    `author_id` INT(11) NOT NULL COMMENT 'ID автора',
+    `published_date` DATE NOT NULL COMMENT 'Дата публикации',
     PRIMARY KEY (`news_id`),
     KEY `author_id` (`author_id`),
     CONSTRAINT `news_ibfk_1` FOREIGN KEY (`author_id`) REFERENCES `user` (`user_id`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8 COMMENT = "Новости";
+) ENGINE = InnoDB COMMENT = 'Новости';
 
--- Дамп данных таблицы `news`
+-- Данные для таблицы `news`
 INSERT INTO
     `news` (
         `news_id`,
@@ -467,20 +464,22 @@ VALUES (
         '2024-06-26'
     );
 
--- Структура представления report
+-- Представление `report`
 CREATE OR REPLACE VIEW report AS
 SELECT
-    c.contract_id AS "Номер договора",
-    ct.name AS "Вид договора",
-    c.amount AS "Сумма договора",
-    o.name AS "Контрагент",
-    u.name AS "Ответственный юрист",
-    cs.name AS "Статус",
-    DATE_FORMAT(c.start_date, '%d.%m.%Y') AS "Дата заключения",
-    DATE_FORMAT(c.end_date, '%d.%m.%Y') AS "Дата окончания"
+    c.contract_id AS 'Номер договора',
+    ct.name AS 'Вид договора',
+    c.amount AS 'Сумма договора',
+    o.name AS 'Контрагент',
+    u.name AS 'Ответственный юрист',
+    cs.name AS 'Статус',
+    DATE_FORMAT(c.start_date, '%d.%m.%Y') AS 'Дата заключения',
+    DATE_FORMAT(c.end_date, '%d.%m.%Y') AS 'Дата окончания'
 FROM
     contract c
     INNER JOIN contract_type ct ON c.type_id = ct.type_id
     INNER JOIN organization o ON c.organization_id = o.organization_id
     INNER JOIN user u ON c.responsible_id = u.user_id
     INNER JOIN contract_status cs ON c.status_id = cs.status_id;
+
+COMMIT;
