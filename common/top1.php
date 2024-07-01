@@ -1,38 +1,38 @@
-<div class="left-side">
+<div class="left-side container mt-4">
     <div id="contracts-section">
-        <h3>Категории договоров</h3>
-        <div class="category">
+        <h3 class="text-center">Категории договоров</h3>
+        <div class="list-group">
             <?php
             $sql = "SELECT * FROM contract_type";
             $q_types = $db->query($sql);
             while ($row_types = mysqli_fetch_array($q_types, MYSQLI_NUM)) : ?>
-                <span class="contract-category">
-                    <p>
-                        <a href="/index.php?type=<?= urlencode($row_types[1]) ?>"><?= htmlspecialchars($row_types[1]) ?></a>
-                    </p>
-                </span>
+                <a href="/index.php?type=<?= urlencode($row_types[1]) ?>" class="list-group-item list-group-item-action">
+                    <?= htmlspecialchars($row_types[1]) ?>
+                </a>
             <?php endwhile; ?>
         </div>
     </div>
-    <div class="auth-container">
+    <div class="auth-container mt-4">
         <?php if (isset($_SESSION['name_client'])) : ?>
-            Здравствуйте, <?= $_SESSION['name_client'] ?>!
-            <a href='/reg.php?exit=1'>Выход</a>
+            <p class="text-center">Здравствуйте, <?= $_SESSION['name_client'] ?>!</p>
+            <a href='/reg.php?exit=1' class="btn btn-danger btn-block">Выход</a>
         <?php else : ?>
-            <form method="get" action="/reg.php">
-                <div>
-                    <h3>Вход</h3>
-                    <div class="input-group">
-                        <label for="email">E-mail:</label>
-                        <input id="email" name="email" type="text" size="30" maxlength="50" class="form-control" />
-                    </div>
-                    <div class="input-group">
-                        <label for="current-password">Пароль:</label>
-                        <input id="current-password" name="current-password" type="current-password" size="20" maxlength="20" class="form-control" />
-                    </div>
-                    <div class="btn-container">
-                        <input class="btn-new" name="enter" type="submit" value="Войти" />
-                        <a href="/reg.php">Регистрация</a>
+            <form method="get" action="/reg.php" class="mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">Вход</h3>
+                        <div class="form-group">
+                            <label for="email">E-mail:</label>
+                            <input id="email" name="email" type="text" size="30" maxlength="50" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="current-password">Пароль:</label>
+                            <input id="current-password" name="current-password" type="password" size="20" maxlength="20" class="form-control" />
+                        </div>
+                        <div class="btn-container text-center">
+                            <input class="btn btn-primary btn-block" name="enter" type="submit" value="Войти" />
+                            <a href="/reg.php" class="btn btn-link">Регистрация</a>
+                        </div>
                     </div>
                 </div>
             </form>
