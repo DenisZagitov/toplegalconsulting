@@ -13,14 +13,7 @@ $user_id = $_SESSION['user_id'] ?? null; // Идентификатор клие�
 <!DOCTYPE html>
 <html lang="ru">
 
-<head>
-  <meta charset="utf-8">
-  <title>Юридическая компания «TopLegalConsulting»</title>
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/header.css">
-  <link rel="stylesheet" href="/css/form.css">
-  <link href="/img/fav-tlc.png" rel="shortcut icon" type="image/x-icon">
-</head>
+<?php include("common/head.php"); ?>
 
 <body class="body">
   <?php include("common/top.php"); ?>
@@ -69,7 +62,7 @@ $user_id = $_SESSION['user_id'] ?? null; // Идентификатор клие�
               $stmt->bind_param("ssi", $destination_dir, $comment, $user_id);
               // Выполняем SQL-запрос
               if ($stmt->execute()) {
-                echo "<p>Файл ". $original_filename ." успешно загружен и информация сохранена в базе данных!</p>";
+                echo "<p>Файл " . $original_filename . " успешно загружен и информация сохранена в базе данных!</p>";
               } else {
                 echo "<p>Ошибка при сохранении информации в базе данных: " . $stmt->error . "</p>";
               }
@@ -126,7 +119,7 @@ $user_id = $_SESSION['user_id'] ?? null; // Идентификатор клие�
       </div>
     </div>
   </div>
-  <?php include("common/bottom.php"); ?>
+  <?php include("common/footer.php"); ?>
 </body>
 
 </html>

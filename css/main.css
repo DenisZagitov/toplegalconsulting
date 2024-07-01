@@ -1,3 +1,7 @@
+* {
+    font-family: Georgia;
+}
+
 header {
     background: #00274d url('/img/banner.png') center center/cover no-repeat;
     color: #fff;
@@ -6,6 +10,15 @@ header {
 
 .navbar-dark .navbar-nav .nav-link {
     color: #fff;
+    padding: 5px 20px;
+    font-size: large;
+    font-weight: 16px;
+}
+
+.active {
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: underline;
 }
 
 .denis-color {
@@ -37,4 +50,20 @@ header {
 .paragraph-text p {
     text-align: justify;
     margin-bottom: 15px;
+}
+
+
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    background-color: #0059b3;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.list-group-item {
+    border: 0px;
+}
+
+.phone-number>a {
+    text-decoration: none;
 }

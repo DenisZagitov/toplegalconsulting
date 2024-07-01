@@ -12,34 +12,28 @@ $type = isset($_GET['type']) ? mysqli_real_escape_string($db, $_GET['type']) : '
 <!DOCTYPE html>
 <html lang="ru">
 
-<head>
-  <meta charset="utf-8">
-  <title>Юридическая компания «TopLegalConsulting»</title>
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/img/fav-tlc.png" rel="shortcut icon" type="image/x-icon">
-  <link href="/css/main.css" rel="stylesheet">
-</head>
+<?php include("common/head.php"); ?>
 
 <body>
 
   <?php include("common/top.php"); ?>
-  <div class="container mt-4">
+  <div class="container mb-2">
     <div class="row">
-      <div class="col-lg-4 col-md-12 mb-4">
+      <div class="col-lg-3 col-md-12 mb-4">
         <?php include("common/top1.php"); ?>
       </div>
-      <div class="col-lg-8 col-md-12">
+      <div class="col-lg-9 col-md-12">
         <h3 class="main-heading">Главное правило делового мира: читай все, включая напечатанное мелким шрифтом.</h3>
         <div class="paragraph-text">
-          <p>Юридическая компания ООО «TopLegalConsulting» предоставляет услуги комплексного юридического сопровождения по корпоративным и коммерческим вопросам в различных отраслях деятельности клиентов.</p>
-          <p>Также компания разрабатывает и обеспечивает клиентов всеми необходимыми видами и формами внутренних и иных документов.</p>
-          <p>Компания представляет интересы национальных и международных клиентов.</p>
-          <p>В компании оказывают весь спектр юридических услуг как для физических, так и для юридических лиц.</p>
-          <p>Для постоянных клиентов компания предлагает особые условия сотрудничества.</p>
-          <p>Компания постоянно совершенствует свой сервис для клиентов, поэтому ждет от них предложений.</p>
+          <p>Юридическая компания ООО «TopLegalConsulting» предоставляет услуги комплексного юридического сопровождения по корпоративным и коммерческим вопросам в различных отраслях деятельности клиентов.
+            Также компания разрабатывает и обеспечивает клиентов всеми необходимыми видами и формами внутренних и иных документов.
+            Компания представляет интересы национальных и международных клиентов.
+            В компании оказывают весь спектр юридических услуг как для физических, так и для юридических лиц.
+            Для постоянных клиентов компания предлагает особые условия сотрудничества.
+            Компания постоянно совершенствует свой сервис для клиентов, поэтому ждет от них предложений.</p>
         </div>
 
-        <h3 class="mt-4">Примеры расценок на наши услуги</h3>
+        <h3 class="mt-4 text-center">Примеры расценок на наши услуги</h3>
         <?php
         $sql = "SELECT * FROM report";
         if (!empty($type)) {
@@ -49,14 +43,14 @@ $type = isset($_GET['type']) ? mysqli_real_escape_string($db, $_GET['type']) : '
         ?>
         <div>
           <?php if (mysqli_num_rows($q) > 0) : ?>
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Вид договора</th>
-                  <th>Сумма договора</th>
-                  <th>Статус</th>
-                  <th>Дата заключения</th>
-                  <th>Дата окончания</th>
+            <table class="table table-hover table-responsive align-middle">
+              <thead class="table-light">
+                <tr class="align-top">
+                  <th scope="col">Вид договора</th>
+                  <th scope="col">Сумма договора</th>
+                  <th scope="col">Статус</th>
+                  <th scope="col">Дата заключения</th>
+                  <th scope="col">Дата окончания</th>
                 </tr>
               </thead>
               <tbody>
@@ -75,22 +69,18 @@ $type = isset($_GET['type']) ? mysqli_real_escape_string($db, $_GET['type']) : '
             <p>Нет данных для отображения.</p>
           <?php endif; ?>
         </div>
-        <div class="btn-container mt-3">
-          <button onclick="window.print();" class="btn btn-primary">Печать</button>
+        <div class="d-flex btn-container justify-content-end mt-3">
           <?php if (!empty($type)) : ?>
             <a href="/">
               <button class="btn btn-secondary">Сброс фильтра</button>
             </a>
           <?php endif; ?>
+          <button onclick="window.print();" class="btn btn-primary">Печать</button>
         </div>
       </div>
     </div>
   </div>
-  <?php include("common/bottom.php"); ?>
-
-  <script src="/js/jquery-3.5.1.slim.min.js"></script>
-  <script src="/js/popper.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
+  <?php include("common/footer.php"); ?>
 </body>
 
 </html>

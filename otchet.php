@@ -19,15 +19,7 @@ $type = isset($_GET['type']) ? mysqli_real_escape_string($db, $_GET['type']) : '
 <!DOCTYPE html>
 <html lang="ru">
 
-<head>
-  <meta charset="utf-8">
-  <title>Юридическая компания «TopLegalConsulting»</title>
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/header.css">
-  <link rel="stylesheet" href="/css/form.css">
-  <link rel="stylesheet" href="/css/table.css">
-  <link href="/img/fav-tlc.png" rel="shortcut icon" type="image/x-icon">
-</head>
+<?php include("common/head.php"); ?>
 
 <body class="body">
   <?php include("common/top.php"); ?>
@@ -81,7 +73,7 @@ $type = isset($_GET['type']) ? mysqli_real_escape_string($db, $_GET['type']) : '
       </div>
     </div>
   </div>
-  <?php include("common/bottom.php"); ?>
+  <?php include("common/footer.php"); ?>
 </body>
 
 </html>

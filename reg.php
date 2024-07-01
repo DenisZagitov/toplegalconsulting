@@ -18,7 +18,6 @@ if (isset($_GET['enter'])) {
         $_SESSION['user_id'] = $row_q_guest[0];
         $_SESSION['name_client'] = $row_q_guest[1];
         $_SESSION['role_id'] = $row_q_guest[2];
-
     }
     header("Location: /");
     exit();
@@ -49,14 +48,8 @@ if (isset($_GET['enter'])) {
 <!DOCTYPE html>
 <html lang="ru">
 
-<head>
-    <meta charset="utf-8">
-    <title>Юридическая компания «TopLegalConsulting»</title>
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/header.css">
-    <link rel="stylesheet" href="/css/form.css">
-    <link href="/img/fav-tlc.png" rel="shortcut icon" type="image/x-icon">
-</head>
+<?php include("common/head.php"); ?>
+
 
 <body class="body">
     <?php include("common/top.php"); ?>
@@ -104,7 +97,7 @@ if (isset($_GET['enter'])) {
             </form>
         </div>
     </div>
-    <?php include("common/bottom.php"); ?>
+    <?php include("common/footer.php"); ?>
 </body>
 
 </html>
